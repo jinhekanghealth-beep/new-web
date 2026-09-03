@@ -512,6 +512,44 @@ html.is-jhk-design { scroll-behavior: smooth; scroll-padding-top: 120px; }
 .jhk-exact .jhk-modal__box { max-height:calc(100dvh - 100px); overflow:visible; }
 .jhk-exact .jhk-modal__frame { max-height:calc(100dvh - 200px); }
 
+
+/* 完整元件縮放：複合卡片、ICON 與文字整組只縮放一次。 */
+.jhk-exact .jhk-scale-unit { --jhk-action-scale:1; scale:var(--jhk-action-scale); transition:scale .16s ease; position:relative; }
+.jhk-exact .jhk-scale-unit:has(:focus-visible) { --jhk-action-scale:1.06; }
+@media(hover:hover) {
+ .jhk-exact .jhk-scale-unit:hover { --jhk-action-scale:1.06; z-index:2; }
+}
+.jhk-exact .jhk-scale-unit:is(:active,.jhk-pressed) { --jhk-action-scale:.94; }
+.jhk-exact .jhk-scale-unit :is(a[href],button,[role='button']) { --jhk-action-scale:1; scale:1; }
+
+
+
+
+/* 捲動視窗內預留縮放空間，原本卡片的位置、寬度與分頁數保持一致。 */
+.jhk-exact .jhk-carousel:not(.jhk-banner) { display:flow-root; overflow:visible; }
+.jhk-exact :is(#jhkVideoTrack,#jhkHotTrack,#jhkCertTrack,#jhkNewsTrack,#jhkDoctorGrid) {
+ --jhk-hover-space:clamp(14px,3vw,24px);
+ --jhk-track-bottom:0px;
+ padding:var(--jhk-hover-space) var(--jhk-hover-space) calc(var(--jhk-hover-space) + var(--jhk-track-bottom));
+ margin:calc(-1 * var(--jhk-hover-space));
+ width:calc(100% + 2 * var(--jhk-hover-space));
+ scroll-padding-inline:var(--jhk-hover-space);
+}
+.jhk-exact #jhkHotTrack { --jhk-track-bottom:calc(var(--u)*12); }
+.jhk-exact #jhkNewsTrack { --jhk-track-bottom:calc(var(--u)*10); }
+@media(min-width:769px) { .jhk-exact #jhkDoctorGrid { overflow:visible; } }
+@media(max-width:768px) { .jhk-exact #jhkHotTrack { --jhk-track-bottom:calc(var(--u)*10); } .jhk-exact #jhkNewsTrack { --jhk-track-bottom:calc(var(--u)*7); } }
+@media(prefers-reduced-motion:reduce) { .jhk-exact .jhk-scale-unit { transition:none; } }
+
+
+/* 使用四張獨立原稿：背景框一層，每個 ICON 與可編輯文字一組。 */
+.jhk-exact .exact-float { position:fixed; overflow:visible; background:none; border:0; border-radius:0; scale:1; }
+.jhk-exact .exact-float__background { display:block; width:100%; height:auto; border-radius:999px; object-fit:contain; pointer-events:none; }
+.jhk-exact .exact-float__items { position:absolute; inset:4% 10%; display:flex; flex-direction:column; justify-content:space-between; overflow:visible; }
+.jhk-exact .exact-float .exact-float-link { position:relative; inset:auto; display:flex; flex-direction:column; align-items:center; gap:clamp(3px,.35vw,6px); width:100%; height:auto; padding:0; border:0; border-radius:0; background:none; overflow:visible; transform-origin:center; color:#173c34; font-size:clamp(11px,1vw,16px); font-weight:700; line-height:1.2; text-align:center; }
+.jhk-exact .exact-float-link img { display:block; width:100%; height:auto; object-fit:contain; border-radius:50%; pointer-events:none; }
+.jhk-exact .exact-float-link span { display:block; white-space:nowrap; pointer-events:none; }
+
 </style>
 <div class="jhk-home jhk-exact" id="jhk-design-home">
 <div class="exact-nav" role="banner">
@@ -619,7 +657,15 @@ html.is-jhk-design { scroll-behavior: smooth; scroll-padding-top: 120px; }
 </div></footer>
 
 
-  <div class="jhk-float exact-float" role="navigation" aria-label="快捷服務"><img src="設計稿精準還原版_圖片/11_右側浮動快捷列/浮動快捷列.webp" alt="" aria-hidden="true" width="468" height="1715"><a class="exact-float-link" href="tel:0809070216" aria-label="撥打客服0809-070-216"></a><a class="exact-float-link" href="https://line.me/R/ti/p/@750lbmxq" target="_blank" rel="noopener" aria-label="加入官方LINE"></a><a class="exact-float-link" href="https://www.healthjhk.com/register" aria-label="加入會員"></a></div>
+  <div class="jhk-float exact-float" role="navigation" aria-label="快捷服務">
+    <img class="exact-float__background" src="設計稿精準還原版_圖片/11_右側浮動快捷列/WEB_浮動視窗ICON.jpg" alt="" aria-hidden="true" width="487" height="1785">
+    <!-- 快捷列的客服、LINE、會員標籤可直接修改下方 span 文字。 -->
+    <div class="exact-float__items">
+      <a class="exact-float-link" href="tel:0809070216" aria-label="撥打客服0809-070-216"><img src="設計稿精準還原版_圖片/11_右側浮動快捷列/WEB_0809客服ICON.jpg" alt="" width="367" height="353"><span>客服</span></a>
+      <a class="exact-float-link" href="https://line.me/R/ti/p/@750lbmxq" target="_blank" rel="noopener" aria-label="加入官方LINE"><img src="設計稿精準還原版_圖片/11_右側浮動快捷列/WEB_LIN@會員ICON.jpg" alt="" width="367" height="356"><span>LINE</span></a>
+      <a class="exact-float-link" href="https://www.healthjhk.com/register" aria-label="加入會員"><img src="設計稿精準還原版_圖片/11_右側浮動快捷列/WEB_官網加入會員ICON.jpg" alt="" width="367" height="356"><span>會員</span></a>
+    </div>
+  </div>
   <div class="jhk-modal" id="jhkVideoModal" hidden><div class="jhk-modal__backdrop" data-close></div><div class="jhk-modal__box" role="dialog" aria-modal="true" aria-label="影片播放"><button class="jhk-modal__close" type="button" data-close aria-label="關閉影片">×</button><div class="jhk-modal__frame" id="jhkVideoFrame"></div><div class="jhk-modal__details"><span id="jhkVideoTitle"></span><a id="jhkVideoExternal" href="https://www.youtube.com/@jhkbio" target="_blank" rel="noopener noreferrer">在 YouTube 開啟 ↗</a></div></div></div>
 </div>
 
@@ -1005,8 +1051,10 @@ var jhkNewsData = {
    if (desktopTeam) {
     Array.from(track.children).forEach(child=>{child.style.flex='';child.style.width='';}); pages=1;
    } else {
-    const gap=parseFloat(getComputedStyle(track).columnGap)||0;
-    const cardWidth=(track.clientWidth-gap*(per-1))/per;
+    const trackStyle=getComputedStyle(track);
+    const gap=parseFloat(trackStyle.columnGap)||0;
+    const viewportWidth=track.clientWidth-(parseFloat(trackStyle.paddingLeft)||0)-(parseFloat(trackStyle.paddingRight)||0);
+    const cardWidth=(viewportWidth-gap*(per-1))/per;
     Array.from(track.children).forEach(child=>{child.style.flex='0 0 '+cardWidth+'px';child.style.width=cardWidth+'px';});
     step=(cardWidth+gap)*per; pages=Math.max(1,Math.ceil(track.children.length/per));
    }
@@ -1065,15 +1113,15 @@ var jhkNewsData = {
  home.addEventListener('click',event=>{
   const button=event.target.closest(selector);
   if(!button||!home.contains(button))return;
-  button.classList.add('jhk-pressed');
-  setTimeout(()=>button.classList.remove('jhk-pressed'),160);
+  const unit=button.closest('.jhk-scale-unit')||button;
+  unit.classList.add('jhk-pressed');
+  setTimeout(()=>unit.classList.remove('jhk-pressed'),160);
  });
  // Retain the original composite artwork; render its button regions as live layers.
  const groups=[];
  const nav=home.querySelector('.exact-nav');
  groups.push({image:nav.querySelector('picture img'),buttons:()=>[...nav.querySelectorAll('.exact-desktop-nav>a,.exact-mobile-nav>a,.exact-mobile-nav>button')]});
- const floating=home.querySelector('.exact-float');
- groups.push({image:floating.querySelector('img'),buttons:()=>[...floating.querySelectorAll('a')]});
+ home.querySelectorAll('.exact-float-link,.jhk-hot__card,.jhk-news__card').forEach(unit=>unit.classList.add('jhk-scale-unit'));
  home.querySelectorAll('.jhk-banner__slide').forEach(slide=>groups.push({image:slide.querySelector('picture img'),buttons:()=>[...slide.querySelectorAll('.jhk-banner__links a')]}));
  function refresh(){
   groups.forEach(group=>{

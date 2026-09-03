@@ -1,0 +1,1113 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#063c30">
+<title>金禾康健康科技有限公司｜新版首頁預覽</title>
+<style>html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}body{margin:0;}</style>
+</head>
+<body>
+<script>document.documentElement.classList.add("is-jhk-design","is-jhk-exact");</script>
+<style>
+/* 2026-09-03 DESIGN：1920 桌機 / 390 手機；區塊高度由內容撐開。 */
+html.is-jhk-design { scroll-behavior: smooth; scroll-padding-top: 120px; }
+.is-jhk-design body { margin: 0; background: #fff; }
+.is-jhk-design #body-outer-container,
+.is-jhk-design #body-outer-container > .container-inner,
+.is-jhk-design #maincontent,
+.is-jhk-design #maincontent > .mainborder,
+.is-jhk-design #maincontent .content-top,
+.is-jhk-design #maincontent .flipper_wrap { width: 100%; max-width: none; margin: 0; padding: 0; border: 0; float: none; }
+.is-jhk-design #body-outer-container .row-fluid { margin: 0; }
+.is-jhk-design #header, .is-jhk-design #footer, .is-jhk-design #content-top,
+.is-jhk-design #jhkg-promo-top-box { display: none !important; }
+.is-jhk-design #jhkg-master-nav#jhkg-master-nav { height: 110px; background: #fff !important; background-image: none !important; color: #234a3e; padding: 0 max(24px, calc((100vw - 1728px)/2)); box-sizing: border-box; border-bottom: 1px solid #e3e9e5; box-shadow: 0 2px 12px #003e2310; }
+.is-jhk-design #jhkg-master-nav .jhkg-menu-item { color: #254638 !important; font-size: 16px; }
+.is-jhk-design #jhkg-master-nav .jhkg-nav-logo img { width: 190px; max-height: 64px; object-fit: contain; }
+.jhk-home { --green: #00835d; --deep: #063c30; --gold: #b99224; --safe: 1728px; --gutter: 112px; --card-gap: 24px; --header-h: 110px; --text: 18px; --h2: 34px; color: #193f34; background: #fff; font-family: 'Microsoft JhengHei','PingFang TC',sans-serif; font-size: var(--text); line-height: 1.6; overflow: clip; padding-top: var(--header-h); }
+.jhk-home *, .jhk-home *::before, .jhk-home *::after { box-sizing: border-box; }
+.jhk-home img { max-width: 100%; height: auto; }
+.jhk-home button, .jhk-home input { font: inherit; }
+.jhk-home button, .jhk-home a { -webkit-tap-highlight-color: transparent; }
+.jhk-home button { cursor: pointer; }
+.jhk-home a { color: inherit; text-decoration: none; }
+.jhk-home a:focus-visible, .jhk-home button:focus-visible { outline: 3px solid #eea424; outline-offset: 4px; }
+.jhk-home h2, .jhk-home h3, .jhk-home p { line-height: 1.5; }
+.jhk-wrap { width: min(var(--safe), calc(100% - var(--gutter))); margin-inline: auto; }
+.jhk-section { padding-block: clamp(36px, 4vw, 72px); }
+.jhk-section--ribbon { padding-top: 0; }
+.jhk-ribbon { position: relative; margin: 0; text-align: center; background: linear-gradient(90deg,#009772,#004721 30%,#006c47 70%,#009772); border-top: 5px solid transparent; border-image: linear-gradient(90deg,#917627,#fff68b,#9d7724) 1; }
+.jhk-ribbon h2 { position: relative; display: inline-block; min-width: min(62%,900px); max-width: calc(100% - 48px); margin: -5px 0 0; padding: 20px 42px; font-size: var(--h2); font-weight: 700; letter-spacing: .06em; background: #00835d; color: #fff; border-top: 5px solid #d5b44f; border-bottom: 5px solid #d5b44f; text-shadow: 1px 2px 3px #00381a60; }
+.jhk-ribbon--round { background: #00835d; }
+.jhk-ribbon--round h2 { margin-bottom: -24px; border-bottom: 0; border-radius: 0 0 48px 48px; color: #fff095; box-shadow: 0 5px 8px #00432125; z-index: 1; }
+.jhk-carousel { position: relative; min-width: 0; }
+.jhk-track, .jhk-doctor__grid { scrollbar-width: none; }
+.jhk-track::-webkit-scrollbar, .jhk-doctor__grid::-webkit-scrollbar { display: none; }
+.jhk-track { display: flex; gap: var(--card-gap); overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; width: 100%; padding: 5px 0 10px; }
+.jhk-track > * { flex: 0 0 auto; min-width: 0; scroll-snap-align: start; }
+.jhk-track.is-dragging { scroll-snap-type: none; cursor: grabbing; }
+.jhk-arrow { position: absolute; z-index: 3; top: 45%; transform: translateY(-50%); width: 44px; height: 44px; border: 1px solid #99a49e; border-radius: 50%; background: #fff; color: #687a70; font-size: 34px !important; line-height: 1; display: grid; place-items: center; padding: 0 0 4px; box-shadow: 0 2px 5px #001a161c; }
+.jhk-arrow.prev { left: -24px; }
+.jhk-arrow.next { right: -24px; }
+.jhk-arrow[hidden], .jhk-dots[hidden] { display: none !important; }
+.jhk-dots { display: flex; justify-content: center; gap: 3px; margin: 15px 0 0; }
+.jhk-dots button { display: grid; place-items: center; background: transparent; border: 0; width: 28px; height: 30px; padding: 0; }
+.jhk-dots button::after { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #bfc5c2; }
+.jhk-dots button[aria-current='true']::after { background: #9b7b19; width: 10px; height: 10px; }
+.jhk-banner { position: relative; width: 100%; background: #eef4f4; }
+.jhk-banner__track { padding: 0; gap: 0; }
+.jhk-banner__slide { flex-basis: 100%; position: relative; }
+.jhk-banner picture, .jhk-banner picture img { display: block; width: 100%; }
+.jhk-banner picture img { aspect-ratio: 1920/825; object-fit: cover; }
+.jhk-banner .jhk-dots { position: absolute; bottom: 12px; inset-inline: 0; margin: 0; }
+.jhk-banner .jhk-dots button::after { background: #fff9; box-shadow: 0 0 2px #555; }
+.jhk-banner .jhk-dots button[aria-current='true']::after { background: #006b4b; }
+.jhk-banner .jhk-arrow.prev { left: 12px; }
+.jhk-banner .jhk-arrow.next { right: 12px; }
+.jhk-banner .jhk-arrow { opacity: .8; }
+.jhk-banner__links { position: absolute; bottom: 13%; left: 5%; display: flex; gap: 14px; width: 50%; opacity: 0; }
+.jhk-banner__links a { flex: 1; min-height: 52px; background: #087b40; color: #fff; display: grid; place-items: center; border-radius: 8px; }
+.jhk-banner__links:focus-within { opacity: 1; }
+.jhk-banner__mobile-gold { display: none; }
+.jhk-video-area { background: #e9f2f4; }
+.jhk-video-area > .jhk-wrap { padding-top: 70px; }
+.jhk-video__card { border: 0; padding: 0; position: relative; border-radius: 18px; overflow: hidden; background: #fff; color: #fff; }
+.jhk-video__thumb, .jhk-news__thumb { position: relative; aspect-ratio: 16/9; background-size: cover; background-position: center; }
+.jhk-video__thumb .play, .jhk-news__thumb .play { position: absolute; inset: 0; margin: auto; width: 62px; height: 62px; border-radius: 50%; display: grid; place-items: center; padding-left: 4px; background: #fffffff2; color: #76847b; font-size: 26px; box-shadow: 0 2px 10px #0002; }
+.jhk-video__name { position: absolute; bottom: 0; inset-inline: 0; padding: 12px; font-size: 20px; line-height: 1.4; font-weight: 700; text-align: center; background: #0009; }
+.jhk-team-area { background: #fff; }
+.jhk-team-intro { margin: 28px auto 32px; text-align: center; color: #6f7974; letter-spacing: .08em; font-size: 20px; }
+.jhk-doctor__grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 38px 28px; }
+.jhk-doctor__card { display: block; aspect-ratio: 582/383; background-position: center; background-size: contain; background-repeat: no-repeat; }
+.jhk-team-area .jhk-arrow, .jhk-team-area .jhk-dots { display: none; }
+.jhk-products-area { padding-top: 12px; background: #fff; }
+.jhk-products-panel { border-radius: 30px; background: #fff; border: 1px solid #edf0ee; padding: 0 42px 22px; box-shadow: 0 6px 30px #173e3210; }
+.jhk-gold-heading { width: fit-content; max-width: 100%; margin: 0 auto 42px; padding: 18px 56px; border-radius: 0 0 52px 52px; background: linear-gradient(90deg,#997717,#b89213,#997717); color: #fff; font-size: var(--h2); font-weight: 700; letter-spacing: .12em; text-align: center; text-shadow: 1px 2px #58421b; }
+.jhk-hot__card { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0,1.1fr); gap: 16px; padding: 24px 20px; border: 1px solid #c7cec9; border-radius: 18px; background: #fff; box-shadow: 2px 4px 3px #203c3429; align-items: center; }
+.jhk-hot__img { display: block; width: 100%; aspect-ratio: 1/1; background-position: center; background-size: contain; background-repeat: no-repeat; }
+.jhk-hot__info { min-width: 0; display: flex; flex-direction: column; gap: 12px; }
+.jhk-hot__info .name { font-size: 17px; line-height: 1.5; color: #172a22; overflow-wrap: anywhere; }
+.jhk-hot__info .price { font-size: 24px; color: #172a22; font-weight: 700; }
+.jhk-hot__actions { display: flex; flex-wrap: wrap; gap: 7px; }
+.jhk-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 8px 14px; border: 0; border-radius: 7px; font-size: 16px; font-weight: 600; text-align: center; line-height: 1.3; }
+.jhk-btn.green { background: #18724f; color: #fff; }
+.jhk-btn.gold { background: #e77700; color: #fff; }
+.jhk-hot__actions .jhk-btn { padding: 8px; flex: 1; white-space: nowrap; }
+.jhk-products-area .jhk-arrow { background: #a17c18; color: #fff; border: 0; }
+.jhk-tech-area { padding-top: 10px; background: linear-gradient(#fff,#d6e7e5); }
+.jhk-tech__row { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 36px; }
+.jhk-tech__card { min-width: 0; position: relative; padding: clamp(24px,3vw,50px); border-radius: 26px; overflow: hidden; color: #fff; background: #124d57; }
+.jhk-tech__card:nth-child(2) { background-image: none; }
+.jhk-tech__card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg,#003946b3,transparent); }
+.jhk-tech__card:nth-child(2)::before { background: linear-gradient(90deg,#84632699,transparent); }
+.jhk-tech__card h3, .jhk-tech__card p { position: relative; z-index: 1; max-width: 72%; }
+.jhk-tech__card h3 { margin: 0 0 22px; color: #fff; font-size: clamp(22px,2.2vw,36px); font-weight: 700; }
+.jhk-tech__card p { margin: 0; font-size: 17px; }
+.jhk-cert { background: linear-gradient(110deg,#05352b,#09684d); color: #fff; }
+.jhk-cert .jhk-ribbon h2 { color: #fff48d; }
+.jhk-cert .jhk-ribbon strong { font-size: 1.9em; line-height: .8; color: #f7da76; font-style: italic; text-shadow: 2px 2px #79551d; }
+.jhk-cert .jhk-wrap { padding-top: 56px; }
+.jhk-cert__doc { display: flex; flex-direction: column; gap: 16px; text-align: center; }
+.jhk-cert__doc .img { width: 100%; aspect-ratio: 5/7; border-radius: 9px; background-color: #fff; background-position: center; background-size: contain; background-repeat: no-repeat; }
+.jhk-cert__doc .cap { font-size: 15px; line-height: 1.5; color: #e7f4ef; overflow-wrap: anywhere; }
+.jhk-cert .jhk-dots button::after { background: #ffffff80; }
+.jhk-cert .jhk-dots button[aria-current='true']::after { background: #fff; }
+.jhk-cert-more { text-align: center; margin: 20px 0 0; }
+.jhk-cert-more a { display: inline-block; color: #fff4b6; padding: 10px 16px; border-bottom: 1px solid #c7b764; }
+.jhk-news-area { background: #edf3f3; }
+.jhk-news-area > .jhk-wrap { padding-top: 45px; }
+.jhk-news__card { border: 1px solid #d5ddd8; border-radius: 18px; overflow: hidden; background: #fff; box-shadow: 2px 4px 4px #1d382a24; }
+.jhk-news__thumb { margin: 8px 8px 0; border-radius: 12px; overflow: hidden; }
+.jhk-news__body { padding: 18px 22px 24px; }
+.jhk-news__body .cap { font-size: 20px; font-weight: 700; }
+.jhk-news__body .desc { margin: 8px 0 0; color: #6a7970; font-size: 16px; }
+.jhk-news__more { display: inline-block; margin-top: 12px; text-decoration: underline !important; }
+.jhk-cta-area { background: #edf3f3; padding-top: 15px; }
+.jhk-cta__row { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 34px; }
+.jhk-cta__item { display: flex; align-items: center; justify-content: center; gap: 16px; padding: 22px 18px; border-radius: 12px; min-height: 118px; color: #fff !important; background: linear-gradient(#ff9700,#df5700 50%,#a90d00); box-shadow: inset 0 1px 1px #ffffffb0; }
+.jhk-cta__item:nth-child(2) { background: linear-gradient(#2dfa82,#0dbc35 55%,#08651a); }
+.jhk-cta__item:nth-child(3) { background: linear-gradient(#09c8f1,#079ddd 50%,#356897); }
+.jhk-cta__icon { display: grid; place-items: center; flex: 0 0 62px; width: 62px; height: 62px; border: 2px solid #fff; border-radius: 50%; }
+.jhk-cta__icon svg { width: 36px; height: 36px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+.jhk-cta__txt { text-align: center; font-size: clamp(18px,1.8vw,30px); font-weight: 700; line-height: 1.35; text-shadow: 1px 2px 3px #23453450; }
+.jhk-cta__txt small { display: block; font-size: .76em; }
+.jhk-footer { padding-block: 38px; background: #06372e; color: #d2e4df; }
+.jhk-footer__inner { display: flex; justify-content: space-between; gap: 40px; align-items: center; flex-wrap: wrap; }
+.jhk-footer__brand { width: 230px; }
+.jhk-footer__brand img { display: block; }
+.jhk-footer__brand small { display: block; margin-top: 12px; font-size: 13px; }
+.jhk-footer__info { font-size: 16px; line-height: 1.8; }
+.jhk-footer__info strong { display: block; color: #fff; font-size: 20px; margin-bottom: 8px; }
+.jhk-footer__info span { display: block; }
+.jhk-footer__social { display: flex; gap: 12px; }
+.jhk-footer__social a { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: #fff; color: #183a2e; font-weight: 700; font-size: 20px; }
+.jhk-float { position: fixed; right: max(5px,env(safe-area-inset-right)); top: 50%; transform: translateY(-50%); z-index: 99990; display: flex; flex-direction: column; gap: 12px; padding: 14px 8px; border-radius: 44px; border: 2px solid #b89b43; background: #f5f6eafa; box-shadow: 0 3px 12px #00382026; }
+.jhk-float__btn { display: flex; align-items: center; flex-direction: column; gap: 3px; font-size: 12px; font-weight: 700; }
+.jhk-float__ico { width: 48px; height: 48px; display: grid; place-items: center; color: #fff; border-radius: 50%; background: linear-gradient(#ffac22,#e67a00); box-shadow: inset 0 0 0 2px #fff; }
+.jhk-float__ico.is-line { background: linear-gradient(#22e878,#08a532); font-size: 12px; }
+.jhk-float__ico.is-member { background: linear-gradient(#18d5ff,#168bc1); }
+.jhk-float__ico svg { width: 28px; height: 28px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+.jhk-modal { position: fixed; inset: 0; z-index: 2147483647; display: flex; justify-content: center; align-items: center; padding: 60px 20px; }
+.jhk-modal[hidden] { display: none; }
+.jhk-modal__backdrop { position: absolute; inset: 0; background: #00120deb; }
+.jhk-modal__box { position: relative; width: min(1000px,100%); background: #fff; border-radius: 14px; }
+.jhk-modal__close { position: absolute; right: 0; top: -50px; width: 44px; height: 44px; font-size: 28px; color: #193f34; background: #fff; border: 0; border-radius: 50%; }
+.jhk-modal__frame { aspect-ratio: 16/9; display: grid; place-items: center; text-align: center; }
+.jhk-modal__frame iframe { width: 100%; height: 100%; border: 0; }
+.jhk-modal__frame p { padding: 24px; margin: 0; }
+@media (min-width:769px) and (max-width:1199px) {
+ .jhk-home { --safe: 1040px; --gutter: 112px; --h2: 28px; --header-h: 96px; }
+ .is-jhk-design #jhkg-master-nav#jhkg-master-nav { height: 96px; padding-inline: 20px; }
+ .is-jhk-design #jhkg-master-nav .jhkg-nav-logo img { width: 140px; }
+ .is-jhk-design #jhkg-master-nav .jhkg-menu-item { font-size: 14px; }
+ .jhk-doctor__grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+ .jhk-tech__row { gap: 20px; }
+ .jhk-tech__card h3, .jhk-tech__card p { max-width: 100%; }
+ .jhk-cta__row { gap: 16px; }
+ .jhk-cta__item { gap: 8px; flex-direction: column; padding: 18px 10px; }
+ .jhk-cta__icon { flex-basis: 48px; width: 48px; height: 48px; }
+ .jhk-products-panel { padding-inline: 24px; }
+}
+@media (max-width:768px) {
+ html.is-jhk-design { scroll-padding-top: 85px; }
+ .jhk-home { --safe: 600px; --gutter: 40px; --card-gap: 18px; --header-h: 75px; --text: 17px; --h2: 26px; }
+ .is-jhk-design #jhkg-master-nav#jhkg-master-nav { height: 75px; padding-inline: 18px; }
+ .is-jhk-design #jhkg-master-nav .jhkg-nav-logo img { width: 150px; max-height: 44px; }
+ .is-jhk-design #jhkg-menu-list { top: 75px; max-height: calc(100dvh - 75px); overflow-y: auto; background: #fff; }
+ .jhk-section { padding-block: 32px; }
+ .jhk-section--ribbon { padding-top: 0; }
+ .jhk-ribbon h2 { min-width: 0; max-width: 100%; width: 100%; padding: 18px 20px; font-size: var(--h2); letter-spacing: .03em; }
+ .jhk-ribbon--round h2 { border-radius: 0 0 40px 40px; margin-bottom: -14px; padding: 20px 12px; font-size: 24px; }
+ .jhk-title-sub { display: none; }
+ .jhk-banner picture img { aspect-ratio: 390/405; object-fit: contain; }
+ .jhk-banner__links { left: 2%; bottom: 3%; width: 96%; gap: 10px; }
+ .jhk-banner__links a { min-height: 40px; }
+ .jhk-banner__gold picture { display: none; }
+ .jhk-banner__mobile-gold { position: relative; display: flex; flex-direction: column; min-height: 100%; aspect-ratio: 390/405; padding: 25px 22px 60px; overflow: hidden; background: radial-gradient(ellipse at 10% 10%,#fff,#fff0 65%),linear-gradient(125deg,#fff6de,#edd198); }
+ .jhk-banner__mobile-gold .brand { width: 135px; }
+ .jhk-banner__mobile-gold h2 { position: relative; z-index: 1; color: #922618; font-size: 31px; line-height: 1.35; margin: 24px 0 10px; }
+ .jhk-banner__mobile-gold h2 strong { font-size: 44px; }
+ .jhk-banner__mobile-gold p { position: relative; z-index: 1; max-width: 48%; font-size: 16px; color: #715126; }
+ .jhk-banner__mobile-gold .doctor { position: absolute; right: -12%; bottom: 18px; width: 70%; }
+ .jhk-banner__gold .jhk-banner__links { opacity: 1; bottom: 17px; }
+ .jhk-banner__gold .jhk-banner__links a:first-child { background: #d56b00; }
+ .jhk-banner .jhk-arrow { display: none; }
+ .jhk-banner .jhk-dots { bottom: 0; }
+ .jhk-video-area > .jhk-wrap { padding-top: 50px; }
+ .jhk-video__name { font-size: 18px; padding: 9px 10px; }
+ .jhk-video__thumb .play, .jhk-news__thumb .play { width: 54px; height: 54px; font-size: 23px; }
+ .jhk-arrow { width: 40px; height: 44px; font-size: 31px !important; }
+ .jhk-arrow.prev { left: -15px; }
+ .jhk-arrow.next { right: -15px; }
+ .jhk-team-intro { font-size: 17px; margin: 24px auto; }
+ .jhk-doctor__grid { display: flex; gap: var(--card-gap); overflow-x: auto; scroll-snap-type: x mandatory; }
+ .jhk-doctor__card { flex: 0 0 100%; scroll-snap-align: start; }
+ .jhk-team-area .jhk-arrow, .jhk-team-area .jhk-dots { display: flex; }
+ .jhk-products-panel { padding: 0 15px 14px; border: 0; border-radius: 0; box-shadow: none; width: calc(100% - 10px); }
+ .jhk-gold-heading { margin-bottom: 30px; padding: 16px 22px; border-radius: 0 0 38px 38px; font-size: 26px; letter-spacing: .08em; }
+ .jhk-hot__card { grid-template-columns: minmax(0,.78fr) minmax(0,1.22fr); gap: 12px; padding: 20px 14px; }
+ .jhk-hot__info { gap: 10px; }
+ .jhk-hot__info .name { font-size: 16px; }
+ .jhk-hot__info .price { font-size: 23px; }
+ .jhk-hot__actions { gap: 6px; }
+ .jhk-hot__actions .jhk-btn { font-size: 15px; min-height: 46px; padding: 9px 6px; }
+ .jhk-tech__row { grid-template-columns: 1fr; gap: 18px; }
+ .jhk-tech-area { padding-top: 0; }
+ .jhk-tech__card { padding: 26px 22px; border-radius: 22px; }
+ .jhk-tech__card h3 { font-size: 24px; max-width: 90%; margin-bottom: 18px; }
+ .jhk-tech__card p { font-size: 16px; max-width: 85%; }
+ .jhk-cert .jhk-wrap { padding-top: 32px; }
+ .jhk-cert .jhk-ribbon h2 { line-height: 1.7; padding: 12px 12px; }
+ .jhk-cert .jhk-ribbon strong { font-size: 58px; }
+ .jhk-cert .jhk-title-sub { display: block; }
+ .jhk-cert #jhkCertTrack { gap: 12px; }
+ .jhk-cert__doc { gap: 10px; }
+ .jhk-cert__doc .cap { font-size: 12px; }
+ .jhk-cert__doc .img { border-radius: 5px; }
+ .jhk-cert-more { font-size: 16px; }
+ .jhk-news-area > .jhk-wrap { padding-top: 32px; }
+ .jhk-news__body { padding: 16px; }
+ .jhk-news__body .cap { font-size: 18px; }
+ .jhk-news__body .desc { font-size: 16px; }
+ .jhk-cta-area { padding-top: 0; }
+ .jhk-cta__row { grid-template-columns: 1fr; gap: 18px; }
+ .jhk-cta__item { min-height: 104px; padding: 20px; justify-content: flex-start; gap: 16px; }
+ .jhk-cta__txt { flex: 1; font-size: 25px; }
+ .jhk-cta__icon { flex-basis: 56px; width: 56px; height: 56px; }
+ .jhk-footer { padding: 36px 0; }
+ .jhk-footer__inner { flex-direction: column; align-items: flex-start; gap: 25px; }
+ .jhk-footer__brand { width: 185px; }
+ .jhk-footer__info { font-size: 16px; overflow-wrap: anywhere; }
+ .jhk-footer__info strong { font-size: 19px; }
+ .jhk-footer__social { gap: 15px; }
+ .jhk-footer__social a { width: 48px; height: 48px; }
+ .jhk-float { right: max(3px,env(safe-area-inset-right)); gap: 6px; padding: 7px 3px; border-width: 1px; }
+ .jhk-float__ico { width: 44px; height: 44px; }
+ .jhk-float__label { font-size: 11px; }
+ .jhk-float__ico svg { width: 24px; height: 24px; }
+}
+@media (prefers-reduced-motion: reduce) { html.is-jhk-design { scroll-behavior: auto; } }
+
+
+/* 精準還原：原稿元件素材＋響應式結構，沒有使用整頁圖片替代網頁。 */
+.is-jhk-exact #jhkg-master-nav#jhkg-master-nav { display:none !important; }
+.jhk-exact { --u:calc(min(100vw,1920px)/1920); --gutter:calc(var(--u)*192); --safe:1728px; --header-h:calc(var(--u)*110); --card-gap:calc(var(--u)*24); max-width:1920px; margin-inline:auto; background:#e5e5e5; font-family:Arial,'Microsoft JhengHei',sans-serif; }
+.jhk-exact a,.jhk-exact button,.jhk-exact p,.jhk-exact input,.jhk-exact .jhk-hot__info .price { font-family:Arial,'Microsoft JhengHei',sans-serif; }
+.exact-sr { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important; }
+.exact-nav { position:fixed; top:0; left:50%; transform:translateX(-50%); z-index:100000; width:min(100%,1920px); background:#efefef; }
+.exact-nav picture,.exact-nav picture img { display:block; width:100%; height:auto; }
+.exact-desktop-nav,.exact-mobile-nav { position:absolute; inset:0; }
+.exact-nav [role='navigation']>a,.exact-nav [role='navigation']>button { position:absolute; height:70%; top:15%; border:0; background:transparent; padding:0; }
+.exact-nav .nav-logo { left:3%; width:12%; }
+.exact-nav .nav-home { left:19.8%; width:4%; }
+.exact-nav .nav-about { left:25.4%; width:7.4%; }
+.exact-nav .nav-team { left:34.3%; width:7.4%; }
+.exact-nav .nav-products { left:42.1%; width:7.4%; }
+.exact-nav .nav-health { left:50.1%; width:7.4%; }
+.exact-nav .nav-contact { left:58%; width:7.4%; }
+.exact-nav .nav-phone { left:68.6%; width:14.5%; }
+.exact-nav .nav-line { left:83.3%; width:12.5%; }
+.exact-mobile-nav { display:none; }
+.exact-drawer { position:absolute; inset:100% 0 auto; padding:10px 18px; background:#fff; box-shadow:0 5px 14px #002e2822; max-height:calc(100dvh - 75px); overflow:auto; }
+.exact-drawer[hidden] { display:none; }
+.exact-nav .exact-drawer>a { position:static; display:block; padding:14px 12px; color:#174a38; font-size:18px; border-bottom:1px solid #e3e9e4; }
+.exact-heading,.exact-heading picture,.exact-heading img { display:block; width:100%; }
+.jhk-exact .jhk-section { padding:0; }
+.jhk-exact .jhk-track { padding:0; }
+.jhk-exact .jhk-dots { margin:calc(var(--u)*24) 0 0; gap:calc(var(--u)*10); }
+.jhk-exact .jhk-dots button { width:calc(var(--u)*30); height:calc(var(--u)*44); }
+.jhk-exact .jhk-dots button::after { width:calc(var(--u)*18); height:calc(var(--u)*18); background:#b9b9b9; }
+.jhk-exact .jhk-dots button[aria-current='true']::after { width:calc(var(--u)*18); height:calc(var(--u)*18); background:#929e97; }
+.jhk-exact .jhk-arrow { width:calc(var(--u)*50); height:calc(var(--u)*50); font-size:calc(var(--u)*55)!important; line-height:1; padding-bottom:calc(var(--u)*7); border-color:#b0b0b0; box-shadow:none; background:#fff; color:#989898; }
+.jhk-exact .jhk-arrow.prev { left:calc(var(--u)*-28); }
+.jhk-exact .jhk-arrow.next { right:calc(var(--u)*-28); }
+.jhk-exact .jhk-banner .jhk-arrow,.jhk-exact .jhk-banner .jhk-dots { display:none; }
+.jhk-exact .jhk-banner__links { bottom:12%; }
+.jhk-exact .jhk-banner picture img { aspect-ratio:1920/825; }
+.jhk-exact .jhk-video-area { background:#eff3f4; padding-bottom:calc(var(--u)*23); }
+.jhk-exact .jhk-video-area>.jhk-wrap { width:calc(100% - var(--u)*190); padding-top:calc(var(--u)*51); }
+.jhk-exact #jhkVideoTrack { gap:calc(var(--u)*60); }
+.jhk-exact .jhk-video__card { border-radius:calc(var(--u)*30); }
+.jhk-exact .jhk-video__name { padding:calc(var(--u)*16) calc(var(--u)*12); font-size:calc(var(--u)*30); line-height:1.4; font-weight:500; background:#000a; }
+.jhk-exact .jhk-video__thumb .play,.jhk-exact .jhk-news__thumb .play { width:calc(var(--u)*70); height:calc(var(--u)*70); font-size:calc(var(--u)*36); background:white; box-shadow:none; color:#a0a0a0; }
+.jhk-exact .jhk-video-area .jhk-arrow { top:calc(var(--u)*150); }
+.jhk-exact .jhk-team-area { background:#e5e5e5; padding-bottom:calc(var(--u)*132); }
+.jhk-exact .jhk-doctor__grid { gap:calc(var(--u)*96) calc(var(--u)*24); }
+.jhk-exact .jhk-doctor__card { border:0; box-shadow:none; border-radius:0; }
+.jhk-exact .jhk-products-area { background:#e5e5e5; padding-top:calc(var(--u)*41); padding-bottom:calc(var(--u)*58); }
+.jhk-exact .jhk-products-panel { width:calc(100% - var(--u)*100); border:0; box-shadow:none; border-radius:calc(var(--u)*54); padding:0 calc(var(--u)*42) calc(var(--u)*28); }
+.exact-product-heading { display:block; width:56.22%; margin:0 auto calc(var(--u)*77); }
+.exact-product-heading img { display:block; width:100%; }
+.jhk-exact #jhkHotTrack { gap:calc(var(--u)*32); padding-bottom:calc(var(--u)*12); }
+.jhk-exact .jhk-hot__card { grid-template-columns:minmax(0,44%) minmax(0,56%); gap:0; padding:calc(var(--u)*38) calc(var(--u)*30); min-height:calc(var(--u)*365); border:1px solid #bdbdbd; border-radius:calc(var(--u)*26); box-shadow:calc(var(--u)*5) calc(var(--u)*8) calc(var(--u)*5) #0004; }
+.jhk-exact .jhk-hot__img { width:100%; aspect-ratio:553/535; }
+.jhk-exact .jhk-hot__info { gap:calc(var(--u)*16); }
+.jhk-exact .jhk-hot__info .name { font-size:calc(var(--u)*24); line-height:1.25; color:#111; }
+.jhk-exact .jhk-hot__info .price { font-size:calc(var(--u)*26); font-weight:400; text-align:right; color:#111; padding-right:calc(var(--u)*4); }
+.jhk-exact .jhk-hot__actions { margin-top:calc(var(--u)*22); gap:calc(var(--u)*10); flex-wrap:nowrap; }
+.jhk-exact .jhk-hot__actions .jhk-btn { min-width:0; min-height:calc(var(--u)*48); padding:calc(var(--u)*8) calc(var(--u)*7); font-size:calc(var(--u)*22); font-weight:400; border-radius:calc(var(--u)*11); }
+.jhk-exact .jhk-btn.green { background:#1e7155; }
+.jhk-exact .jhk-btn.gold { background:#e96500; }
+.jhk-exact .jhk-products-area .jhk-arrow { background:#a3801b; color:#fff; top:calc(var(--u)*176); }
+.jhk-exact .jhk-products-area .jhk-dots { margin-top:calc(var(--u)*26); }
+.jhk-exact .jhk-tech-area { padding:calc(var(--u)*31) 0 calc(var(--u)*60); background:#e5e5e5; }
+.jhk-exact .jhk-tech__row { width:calc(100% - var(--u)*118); margin-left:calc(var(--u)*67); gap:calc(var(--u)*50); }
+.jhk-exact .jhk-tech__card { padding:0; border:0; border-radius:0; background:none; box-shadow:none; }
+.jhk-exact .jhk-tech__card::before { display:none; }
+.jhk-exact .jhk-tech__card picture,.jhk-exact .jhk-tech__card img { display:block; width:100%; }
+.jhk-exact .jhk-cert { background:linear-gradient(105deg,#06342b,#0b644f); padding-bottom:calc(var(--u)*42); }
+.jhk-exact .jhk-cert>.jhk-wrap { width:calc(100% - var(--u)*360); padding-top:calc(var(--u)*150); }
+.jhk-exact #jhkCertTrack { gap:calc(var(--u)*46); }
+.jhk-exact .jhk-cert__doc { gap:calc(var(--u)*20); }
+.jhk-exact .jhk-cert__doc .img { aspect-ratio:224/311; border-radius:calc(var(--u)*14); background-size:cover; }
+.jhk-exact .jhk-cert__doc .cap { font-size:calc(var(--u)*24); line-height:1.3; color:#dfebe7; }
+.jhk-exact .jhk-cert .jhk-arrow { top:calc(var(--u)*165); }
+.jhk-exact .jhk-cert .jhk-arrow.prev { left:calc(var(--u)*-92); }
+.jhk-exact .jhk-cert .jhk-arrow.next { right:calc(var(--u)*-92); }
+.jhk-exact .jhk-cert .jhk-dots { margin-top:calc(var(--u)*68); }
+.jhk-exact .jhk-cert-more { display:none; }
+.jhk-exact .jhk-news-area { background:#eff3f4; padding-bottom:calc(var(--u)*10); }
+.jhk-exact .jhk-news-area>.jhk-wrap { width:calc(100% - var(--u)*300); padding-top:calc(var(--u)*17); }
+.jhk-exact #jhkNewsTrack { gap:calc(var(--u)*32); padding-bottom:calc(var(--u)*10); }
+.jhk-exact .jhk-news__card { border:0; border-radius:calc(var(--u)*34); box-shadow:calc(var(--u)*6) calc(var(--u)*8) calc(var(--u)*5) #0004; }
+.jhk-exact .jhk-news__thumb { margin:calc(var(--u)*10) calc(var(--u)*10) 0; width:calc(100% - var(--u)*20)!important; border-radius:calc(var(--u)*25); }
+.jhk-exact .jhk-news__body { padding:calc(var(--u)*31) calc(var(--u)*31) calc(var(--u)*38); }
+.jhk-exact .jhk-news__body .cap { font-size:calc(var(--u)*22); font-weight:700; line-height:1.4; }
+.jhk-exact .jhk-news__body .desc { font-size:calc(var(--u)*17); color:#929e98; margin-top:calc(var(--u)*12); }
+.jhk-exact .jhk-news-area .jhk-arrow { top:calc(var(--u)*214); }
+.jhk-exact .jhk-news-area .jhk-arrow.prev { left:calc(var(--u)*-83); }
+.jhk-exact .jhk-news-area .jhk-arrow.next { right:calc(var(--u)*-83); }
+.jhk-exact .jhk-news-area .jhk-dots { margin-top:calc(var(--u)*20); }
+.jhk-exact .jhk-cta-area { background:#eff3f4; padding:calc(var(--u)*10) 0 calc(var(--u)*80); }
+.jhk-exact .jhk-cta__row { width:calc(100% - var(--u)*192); gap:calc(var(--u)*60); }
+.jhk-exact .jhk-cta__item { display:block; padding:0; min-height:0; border-radius:0; background:none; box-shadow:none; }
+.jhk-exact .jhk-cta__item img { display:block; width:100%; }
+.jhk-exact .jhk-footer { padding:calc(var(--u)*44) 0; background:#06372e; }
+.jhk-exact .jhk-footer__inner { gap:calc(var(--u)*30); flex-wrap:nowrap; }
+.jhk-exact .jhk-footer__info { font-size:calc(var(--u)*18); line-height:1.45; }
+.jhk-exact .jhk-footer__info strong { font-size:calc(var(--u)*23); margin-bottom:calc(var(--u)*10); }
+.jhk-exact .jhk-footer__brand { width:calc(var(--u)*280); }
+.jhk-exact .jhk-footer__brand small { font-size:calc(var(--u)*14); }
+.jhk-exact .jhk-footer__social { gap:calc(var(--u)*14); }
+.jhk-exact .jhk-footer__social a { width:calc(var(--u)*52); height:calc(var(--u)*52); font-size:calc(var(--u)*25); }
+.jhk-exact .exact-float { width:clamp(66px,5.1vw,98px); display:block; padding:0; gap:0; border:0; border-radius:0; background:none; box-shadow:none; right:8px; }
+.exact-float>img { display:block; width:100%; }
+.jhk-exact .exact-float-link { position:absolute; left:5%; width:90%; height:32%; top:2%; border-radius:40%; }
+.jhk-exact .exact-float-link:nth-of-type(2) { top:34%; }
+.jhk-exact .exact-float-link:nth-of-type(3) { top:66%; }
+@media (min-width:769px) and (max-width:1199px) {
+ .jhk-exact .jhk-hot__info .name { font-size:16px; }
+ .jhk-exact .jhk-hot__info .price { font-size:20px; }
+ .jhk-exact .jhk-hot__actions .jhk-btn { font-size:15px; min-height:40px; }
+ .jhk-exact .jhk-cert__doc .cap { font-size:14px; }
+ .jhk-exact .jhk-news__body .cap { font-size:16px; }
+ .jhk-exact .jhk-news__body .desc { font-size:13px; }
+ .jhk-exact .jhk-footer__info { font-size:14px; }
+ .jhk-exact .jhk-footer__info strong { font-size:17px; }
+}
+@media (max-width:768px) {
+ .jhk-exact { --u:calc(min(100vw,520px)/390); --header-h:calc(100vw*75/390); --gutter:calc(var(--u)*56); --card-gap:calc(var(--u)*18); }
+ .exact-nav { width:100%; }
+ .exact-desktop-nav { display:none; }
+ .exact-mobile-nav { display:block; }
+ .exact-mobile-nav .nav-menu { left:2%; width:12%; }
+ .exact-mobile-nav .nav-logo { left:24%; width:42%; }
+ .exact-mobile-nav .nav-member { left:76%; width:11%; }
+ .exact-mobile-nav .nav-cart { left:88%; width:11%; }
+ .exact-nav [role='navigation']>a,.exact-nav [role='navigation']>button { top:10%; height:80%; }
+ .jhk-exact .jhk-banner picture img { aspect-ratio:390/405; }
+ .jhk-exact .jhk-banner__links { bottom:3%; }
+ .jhk-exact .jhk-dots { margin-top:calc(var(--u)*10); gap:calc(var(--u)*3); }
+ .jhk-exact .jhk-dots button { width:calc(var(--u)*11); height:calc(var(--u)*28); min-width:11px; }
+ .jhk-exact .jhk-dots button::after,.jhk-exact .jhk-dots button[aria-current='true']::after { width:calc(var(--u)*6); height:calc(var(--u)*6); }
+ .jhk-exact .jhk-arrow { width:calc(var(--u)*26); height:calc(var(--u)*26); font-size:calc(var(--u)*32)!important; padding-bottom:calc(var(--u)*4); }
+ .jhk-exact .jhk-arrow.prev { left:calc(var(--u)*-14); }
+ .jhk-exact .jhk-arrow.next { right:calc(var(--u)*-14); }
+ .jhk-exact .jhk-video-area { background:#efefef; padding-bottom:calc(var(--u)*7); }
+ .jhk-exact .jhk-video-area>.jhk-wrap { width:calc(100% - var(--u)*56); padding-top:calc(var(--u)*29); }
+ .jhk-exact .jhk-video__card { border-radius:calc(var(--u)*15); }
+ .jhk-exact .jhk-video__name { font-size:calc(var(--u)*18); padding:calc(var(--u)*10) calc(var(--u)*5); }
+ .jhk-exact .jhk-video__thumb .play,.jhk-exact .jhk-news__thumb .play { width:calc(var(--u)*45); height:calc(var(--u)*45); font-size:calc(var(--u)*26); }
+ .jhk-exact .jhk-video-area .jhk-arrow { top:calc(var(--u)*104); }
+ .jhk-exact .jhk-team-area { padding-bottom:calc(var(--u)*18); }
+ .jhk-exact .jhk-team-area>.jhk-wrap { width:calc(100% - var(--u)*50); }
+ .jhk-exact .jhk-doctor__grid { gap:calc(var(--u)*18); }
+ .jhk-exact .jhk-team-area .jhk-arrow { display:none; }
+ .jhk-exact .jhk-team-area .jhk-dots { margin-top:calc(var(--u)*20); }
+ .jhk-exact .jhk-products-area { padding:0 0 calc(var(--u)*5); }
+ .jhk-exact .jhk-products-panel { width:100%; background:transparent; padding:0; border-radius:0; }
+ .exact-product-heading { width:calc(100% - var(--u)*10); margin:0 auto calc(var(--u)*23); }
+ .jhk-exact .jhk-products-panel>.jhk-carousel { width:calc(var(--u)*306); max-width:calc(100% - 60px); margin:auto; }
+ .jhk-exact #jhkHotTrack { gap:calc(var(--u)*18); padding-bottom:calc(var(--u)*10); }
+ .jhk-exact .jhk-hot__card { min-height:calc(var(--u)*200); padding:calc(var(--u)*22) calc(var(--u)*17); border-radius:calc(var(--u)*14); grid-template-columns:minmax(0,43%) minmax(0,57%); }
+ .jhk-exact .jhk-hot__info { gap:calc(var(--u)*8); }
+ .jhk-exact .jhk-hot__info .name { font-size:calc(var(--u)*14); line-height:1.23; }
+ .jhk-exact .jhk-hot__info .price { font-size:calc(var(--u)*17); padding-right:0; }
+ .jhk-exact .jhk-hot__actions { margin-top:calc(var(--u)*12); gap:calc(var(--u)*5); }
+ .jhk-exact .jhk-hot__actions .jhk-btn { min-height:calc(var(--u)*26); padding:calc(var(--u)*5) calc(var(--u)*4); font-size:calc(var(--u)*12); border-radius:calc(var(--u)*6); }
+ .jhk-exact .jhk-products-area .jhk-arrow { top:calc(var(--u)*92); }
+ .jhk-exact .jhk-products-area .jhk-arrow.prev { left:calc(var(--u)*-28); }
+ .jhk-exact .jhk-products-area .jhk-arrow.next { right:calc(var(--u)*-28); }
+ .jhk-exact .jhk-products-area .jhk-dots { margin-top:calc(var(--u)*10); }
+ .jhk-exact .jhk-tech-area { padding:calc(var(--u)*32) 0 calc(var(--u)*27); }
+ .jhk-exact .jhk-tech__row { width:calc(100% - var(--u)*56); margin:auto; gap:calc(var(--u)*13); }
+ .jhk-exact .jhk-cert { padding-bottom:calc(var(--u)*7); }
+ .jhk-exact .jhk-cert>.jhk-wrap { width:calc(100% - var(--u)*106); padding-top:calc(var(--u)*53); }
+ .jhk-exact #jhkCertTrack { gap:calc(var(--u)*17); }
+ .jhk-exact .jhk-cert__doc { gap:calc(var(--u)*8); }
+ .jhk-exact .jhk-cert__doc .img { border-radius:calc(var(--u)*5); }
+ .jhk-exact .jhk-cert__doc .cap { font-size:calc(var(--u)*10); line-height:1.3; }
+ .jhk-exact .jhk-cert .jhk-arrow { width:calc(var(--u)*19); height:calc(var(--u)*19); font-size:calc(var(--u)*25)!important; top:calc(var(--u)*62); }
+ .jhk-exact .jhk-cert .jhk-arrow.prev { left:calc(var(--u)*-26); }
+ .jhk-exact .jhk-cert .jhk-arrow.next { right:calc(var(--u)*-26); }
+ .jhk-exact .jhk-cert .jhk-dots { margin-top:calc(var(--u)*23); }
+ .jhk-exact .jhk-cert .jhk-dots button::after { background:#fff; }
+ .jhk-exact .jhk-news-area { background:#e5e5e5; padding-bottom:0; }
+ .jhk-exact .jhk-news-area>.jhk-wrap { width:calc(var(--u)*314); max-width:calc(100% - 50px); padding-top:calc(var(--u)*47); }
+ .jhk-exact #jhkNewsTrack { gap:calc(var(--u)*18); padding-bottom:calc(var(--u)*7); }
+ .jhk-exact #jhkNewsTrack>.jhk-news__card:last-child { order:-1; }
+ .jhk-exact .jhk-news__card { border-radius:calc(var(--u)*18); }
+ .jhk-exact .jhk-news__thumb { margin:calc(var(--u)*5) calc(var(--u)*5) 0; width:calc(100% - var(--u)*10)!important; border-radius:calc(var(--u)*15); }
+ .jhk-exact .jhk-news__body { padding:calc(var(--u)*20) calc(var(--u)*18) calc(var(--u)*24); }
+ .jhk-exact .jhk-news__body .cap { font-size:calc(var(--u)*14); }
+ .jhk-exact .jhk-news__body .desc { font-size:calc(var(--u)*10); margin-top:calc(var(--u)*8); }
+ .jhk-exact .jhk-news-area .jhk-arrow { top:calc(var(--u)*127); }
+ .jhk-exact .jhk-news-area .jhk-arrow.prev { left:calc(var(--u)*-15); }
+ .jhk-exact .jhk-news-area .jhk-arrow.next { right:calc(var(--u)*-15); }
+ .jhk-exact .jhk-news-area .jhk-dots { margin-top:calc(var(--u)*8); }
+ .jhk-exact .jhk-cta-area { background:#e5e5e5; padding:calc(var(--u)*20) 0 calc(var(--u)*36); }
+ .jhk-exact .jhk-cta__row { width:calc(100% - var(--u)*64); gap:calc(var(--u)*18); }
+ .jhk-exact .jhk-footer { padding:calc(var(--u)*40) 0; }
+ .jhk-exact .jhk-footer__inner { width:calc(100% - var(--u)*44); gap:calc(var(--u)*26); align-items:flex-start; }
+ .jhk-exact .jhk-footer__brand { display:none; }
+ .jhk-exact .jhk-footer__info { font-size:calc(var(--u)*14); line-height:1.35; }
+ .jhk-exact .jhk-footer__info strong { font-size:calc(var(--u)*18); margin-bottom:calc(var(--u)*16); }
+ .jhk-exact .jhk-footer__social { gap:calc(var(--u)*15); }
+ .jhk-exact .jhk-footer__social a { width:calc(var(--u)*48); height:calc(var(--u)*48); font-size:calc(var(--u)*22); }
+ .jhk-exact .exact-float { width:50px; right:4px; }
+}
+
+
+/* 頁尾依桌機／手機設計稿補齊；公司內容採用已確認的資料。 */
+.jhk-exact .jhk-footer { background:#052e27; padding:clamp(24px,2.6vw,50px) 0 clamp(14px,.95vw,18px); }
+.jhk-exact .jhk-footer,.jhk-exact .jhk-footer * { font-family:Arial,'Microsoft JhengHei',sans-serif; }
+.jhk-exact .jhk-footer__inner { width:calc(100% - clamp(48px,8vw,154px)); display:grid; grid-template-columns:clamp(190px,21vw,400px) minmax(0,1fr) auto; column-gap:clamp(24px,2.5vw,48px); row-gap:0; align-items:center; }
+.jhk-exact .jhk-footer__brand { display:block; width:100%; padding-right:clamp(24px,2.4vw,46px); border-right:2px solid #a58a2a; }
+.jhk-exact .jhk-footer__brand a { display:block; }
+.jhk-exact .jhk-footer__brand img { display:block; width:100%; height:auto; }
+.jhk-exact .jhk-footer__brand .jhk-footer__tagline { display:block; margin-top:clamp(12px,1vw,20px); color:#fff; text-align:center; font-size:clamp(16px,1.8vw,34px); font-weight:400; letter-spacing:.3em; white-space:nowrap; }
+.jhk-exact .jhk-footer__info { min-width:0; font-size:clamp(12px,1vw,19px); line-height:1.4; color:#b7cec5; }
+.jhk-exact .jhk-footer__info strong { font-family:Arial,'Microsoft JhengHei',sans-serif; font-size:clamp(15px,1.3vw,25px); font-weight:700; margin:0 0 clamp(10px,1vw,19px); line-height:1.35; }
+.jhk-exact .jhk-footer__info span { display:block; }
+.jhk-exact .jhk-footer__info a { color:inherit; text-decoration:none; }
+.jhk-exact .jhk-footer__social { display:flex; align-items:center; gap:clamp(10px,1.35vw,26px); }
+.jhk-exact .jhk-footer__social :is(a,button) { width:clamp(44px,4.15vw,80px); height:clamp(44px,4.15vw,80px); flex:0 0 auto; display:block; border:0; padding:0; border-radius:50%; background:#fff; color:#1d1917; overflow:visible; }
+.jhk-exact .jhk-footer__social img { display:block; width:100%; height:100%; object-fit:cover; border-radius:50%; }
+.jhk-exact .jhk-footer__copyright { display:block; grid-column:1/-1; margin:0; color:#8aa39a; font:clamp(11px,.9vw,17px)/1.4 Arial,'Microsoft JhengHei',sans-serif; text-align:right; }
+@media(max-width:1100px) and (min-width:769px) {
+ .jhk-exact .jhk-footer__inner { grid-template-columns:170px minmax(0,1fr) auto; gap:20px; }
+ .jhk-exact .jhk-footer__social { gap:8px; }
+ .jhk-exact .jhk-footer__brand { padding-right:20px; }
+ .jhk-exact .jhk-footer__brand .jhk-footer__tagline { font-size:15px; letter-spacing:.2em; }
+}
+@media(max-width:768px) {
+ .jhk-exact .jhk-footer { padding:38px 0 34px; }
+ .jhk-exact .jhk-footer__inner { display:flex; flex-direction:column; width:calc(100% - 58px); max-width:520px; margin:auto; gap:42px; align-items:stretch; }
+ .jhk-exact .jhk-footer__brand { display:none; }
+ .jhk-exact .jhk-footer__info { font-size:clamp(13px,4.1vw,20px); line-height:1.3; overflow-wrap:normal; }
+ .jhk-exact .jhk-footer__info strong { font-size:clamp(17px,4.62vw,23px); margin-bottom:16px; }
+ .jhk-exact .jhk-footer__social { display:flex; width:100%; justify-content:space-between; gap:12px; padding:0 10px; }
+ .jhk-exact .jhk-footer__social :is(a,button) { width:clamp(52px,16.4vw,72px); height:clamp(52px,16.4vw,72px); }
+ .jhk-exact .jhk-footer__copyright { display:none; }
+}
+/* 所有按鈕只用縮放回饋，不新增外框、陰影或底色。 */
+.jhk-exact :is(a[href],button,[role='button']) { --jhk-action-scale:1; cursor:pointer; -webkit-tap-highlight-color:transparent; scale:var(--jhk-action-scale); transition:scale .16s ease; }
+.jhk-exact :is(a[href],button,[role='button']):is(:hover,:active,:focus-visible,.jhk-pressed) { outline:none; box-shadow:none; filter:none; }
+.jhk-exact :is(a[href],button,[role='button']):focus-visible { --jhk-action-scale:1.06; text-decoration:underline; text-underline-offset:4px; }
+@media(hover:hover) {
+ .jhk-exact :is(a[href],button,[role='button']):hover { --jhk-action-scale:1.06; }
+}
+.jhk-exact :is(a[href],button,[role='button']):is(:active,.jhk-pressed) { --jhk-action-scale:.94; }
+.jhk-exact .jhk-footer__info a { display:inline-block; }
+.jhk-exact .jhk-banner__links { opacity:1; }
+.jhk-exact .jhk-banner__links a { position:relative; }
+.jhk-exact .jhk-banner__slide:not(.jhk-banner__gold) .jhk-banner__links a,.jhk-exact .jhk-banner__gold .jhk-banner__links a { color:transparent; background:transparent; font-size:0; border-radius:8px; }
+@media(max-width:768px) {
+ .jhk-exact .jhk-banner__gold .jhk-banner__links a { color:#fff; font-size:16px; background:#087b40; }
+ .jhk-exact .jhk-banner__gold .jhk-banner__links a:first-child { background:#d56b00; }
+}
+/* 圖片內的按鈕也縮放其圖像，透明點擊區保持穩定。 */
+.jhk-exact :is(a[href],button).jhk-art-button { scale:1; overflow:visible; }
+.jhk-exact .jhk-button-art { display:block; position:absolute; inset:0; pointer-events:none; background-repeat:no-repeat; scale:var(--jhk-action-scale); transition:scale .16s ease; }
+.jhk-exact .exact-float { background:#edf0eb; border-radius:100px; }
+.jhk-exact .jhk-dots button::after { transition:scale .16s ease; }
+@media(prefers-reduced-motion:reduce) { .jhk-exact :is(a[href],button,[role='button']),.jhk-exact .jhk-button-art { transition:none; } }
+
+
+.jhk-exact .jhk-modal__details { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px 20px; padding:14px 18px; background:#fff; color:#174536; font-size:15px; }
+.jhk-exact .jhk-modal__details>a { display:inline-block; white-space:nowrap; text-decoration:underline; text-underline-offset:3px; color:#174536; }
+.jhk-exact .jhk-modal__box { max-height:calc(100dvh - 100px); overflow:visible; }
+.jhk-exact .jhk-modal__frame { max-height:calc(100dvh - 200px); }
+
+</style>
+<div class="jhk-home jhk-exact" id="jhk-design-home">
+<div class="exact-nav" role="banner">
+  <picture><source media="(max-width:768px)" srcset="設計稿精準還原版_圖片/01_導覽列/導覽_手機.webp"><img src="設計稿精準還原版_圖片/01_導覽列/導覽_桌機.webp" alt="" aria-hidden="true" fetchpriority="high" width="2880" height="165"></picture>
+  <div class="exact-desktop-nav" role="navigation" aria-label="主選單">
+    <a class="nav-logo" href="#jhk-design-home" aria-label="金禾康首頁"></a>
+    <a class="nav-home" href="#jhk-design-home" aria-label="首頁"></a>
+    <a class="nav-about" href="https://www.healthjhk.com/Brand-Philosophy" aria-label="關於金禾康"></a>
+    <a class="nav-team" href="#jhk-team" aria-label="專業團隊"></a>
+    <a class="nav-products" href="#jhk-products" aria-label="熱銷商品"></a>
+    <a class="nav-health" href="https://www.healthjhk.com/health-knowledge" aria-label="健康知識"></a>
+    <a class="nav-contact" href="#jhk-contact" aria-label="聯絡我們"></a>
+    <a class="nav-phone" href="tel:0809070216" aria-label="0809070216諮詢"></a>
+    <a class="nav-line" href="https://line.me/R/ti/p/@750lbmxq" target="_blank" rel="noopener" aria-label="加入LINE會員"></a>
+  </div>
+  <div class="exact-mobile-nav" role="navigation" aria-label="手機導覽">
+    <button type="button" class="nav-menu" aria-label="開啟主選單" aria-controls="exact-drawer" aria-expanded="false"></button>
+    <a class="nav-logo" href="#jhk-design-home" aria-label="金禾康首頁"></a>
+    <a class="nav-member" href="https://www.healthjhk.com/login" aria-label="會員專區"></a>
+    <a class="nav-cart" href="https://www.healthjhk.com/index.php?route=checkout/cart" aria-label="購物車"></a>
+  </div>
+  <div class="exact-drawer" id="exact-drawer" role="navigation" aria-label="展開的主選單" hidden>
+    <a href="#jhk-design-home">首頁</a><a href="https://www.healthjhk.com/Brand-Philosophy">關於金禾康</a><a href="#jhk-team">專業團隊</a><a href="#jhk-products">熱銷商品</a><a href="https://www.healthjhk.com/health-knowledge">健康知識</a><a href="#jhk-contact">聯絡我們</a>
+  </div>
+</div>
+
+  <section class="jhk-banner jhk-carousel" data-carousel data-per-view="1" data-autoplay aria-label="品牌主視覺">
+    <div class="jhk-track jhk-banner__track">
+      <div class="jhk-banner__slide">
+        <picture><source media="(max-width:768px)" srcset="設計稿精準還原版_圖片/02_主視覺輪播/主視覺01_手機.webp"><img src="設計稿精準還原版_圖片/02_主視覺輪播/主視覺01_桌機.webp" alt="金禾康循利寧芯泌體，徐乃麟推薦，暢快樂活、順行呵護" width="1920" height="825" fetchpriority="high"></picture>
+        <div class="jhk-banner__links"><a href="tel:0809070216" aria-label="撥打客服專線，洽詢優惠">電話諮詢優惠</a><a href="https://line.me/R/ti/p/@750lbmxq" target="_blank" rel="noopener">加入官方 LINE</a></div>
+      </div>
+      <div class="jhk-banner__slide jhk-banner__gold">
+        <picture><img src="設計稿精準還原版_圖片/02_主視覺輪播/主視覺02_桌機.webp" alt="黃兆康醫師推薦，讓健康之路一路順行" width="1920" height="825" loading="lazy"></picture>
+        <div class="jhk-banner__mobile-gold"><img class="brand" src="設計稿精準還原版_圖片/02_主視覺輪播/主視覺02_手機Logo.png" alt="金禾康"><h2>讓健康之路<br><strong>一路順行</strong></h2><p>健康維持・養生之道<br>黃兆康醫師推薦</p><img class="doctor" src="設計稿精準還原版_圖片/02_主視覺輪播/主視覺02_手機人物.webp" alt="黃兆康醫師" loading="lazy"></div>
+        <div class="jhk-banner__links"><a href="tel:0809070216">電話諮詢優惠</a><a href="https://line.me/R/ti/p/@750lbmxq" target="_blank" rel="noopener">加入官方 LINE</a></div>
+      </div>
+    </div>
+    <button class="jhk-arrow prev" aria-label="上一張主視覺" type="button">‹</button><button class="jhk-arrow next" aria-label="下一張主視覺" type="button">›</button><div class="jhk-dots" aria-label="主視覺分頁"></div>
+  </section>
+
+  <section class="jhk-section jhk-section--ribbon jhk-video-area" id="jhk-videos" aria-labelledby="jhk-video-title">
+    <div class="exact-heading exact-heading--video"><h2 id="jhk-video-title" class="exact-sr">食用泌體科技・健康新視野</h2><picture class=""><source media="(max-width:768px)" srcset="設計稿精準還原版_圖片/03_影片縮圖/標題_手機.webp"><img src="設計稿精準還原版_圖片/03_影片縮圖/標題_桌機.webp" alt="食用泌體科技・健康新視野" width="2880" height="345"></picture></div>
+    <div class="jhk-wrap"><div class="jhk-carousel" data-carousel data-per-view="3" aria-label="科技影音">
+      <div class="jhk-track" id="jhkVideoTrack"></div><button class="jhk-arrow prev" type="button" aria-label="上一組影片">‹</button><button class="jhk-arrow next" type="button" aria-label="下一組影片">›</button><div class="jhk-dots"></div>
+    </div></div>
+  </section>
+
+  <section class="jhk-section jhk-section--ribbon jhk-team-area" id="jhk-team" aria-labelledby="jhk-team-title">
+    <div class="exact-heading exact-heading--team"><h2 id="jhk-team-title" class="exact-sr">權威團隊研發｜為健康嚴格把關</h2><picture class=""><source media="(max-width:768px)" srcset="設計稿精準還原版_圖片/04_專業團隊/標題_手機.webp"><img src="設計稿精準還原版_圖片/04_專業團隊/標題_桌機.webp" alt="權威團隊研發｜為健康嚴格把關" width="2880" height="525"></picture></div>
+    <div class="jhk-wrap"><p class="exact-sr">跨領域專業團隊參與，從研發到品質層層把關</p>
+      <div class="jhk-carousel" data-carousel data-team aria-label="專業研發團隊">
+        <div class="jhk-doctor__grid" id="jhkDoctorGrid"></div><button class="jhk-arrow prev" type="button" aria-label="上一位專家">‹</button><button class="jhk-arrow next" type="button" aria-label="下一位專家">›</button><div class="jhk-dots"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="jhk-section jhk-products-area" id="jhk-products" aria-labelledby="jhk-products-title">
+    <div class="jhk-wrap jhk-products-panel"><h2 id="jhk-products-title" class="exact-sr">精品熱銷排行榜</h2><picture class="exact-product-heading"><source media="(max-width:768px)" srcset="設計稿精準還原版_圖片/05_熱銷商品/標題_手機.webp"><img src="設計稿精準還原版_圖片/05_熱銷商品/標題_桌機.webp" alt="精品熱銷排行榜" width="1464" height="220"></picture>
+      <div class="jhk-carousel" data-carousel data-per-view="3" aria-label="熱銷商品">
+        <div class="jhk-track" id="jhkHotTrack"></div><button class="jhk-arrow prev" type="button" aria-label="上一組商品">‹</button><button class="jhk-arrow next" type="button" aria-label="下一組商品">›</button><div class="jhk-dots"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="jhk-section jhk-tech-area" id="jhk-technology" aria-label="科研核心技術">
+    <div class="jhk-wrap jhk-tech__row">
+      <article class="jhk-tech__card"><picture class=""><source media="(max-width:768px)" srcset="設計稿精準還原版_圖片/06_技術介紹/技術_綠色_手機.webp"><img src="設計稿精準還原版_圖片/06_技術介紹/技術_綠色_桌機.webp" alt="專利植物萃取奈米囊泡，啟動順暢循環。不同於傳統植萃容易被破壞，我們完整封存上兆級活性成分，精準傳遞健康訊號，給身體真正需要的純粹能量。" width="1316" height="689"></picture></article>
+      <article class="jhk-tech__card"><picture class=""><source media="(max-width:768px)" srcset="設計稿精準還原版_圖片/06_技術介紹/技術_金色_手機.webp"><img src="設計稿精準還原版_圖片/06_技術介紹/技術_金色_桌機.webp" alt="奈米囊泡技術，77種活性胜肽。經過嚴格 ZetaView 分析與身分驗證，採用頂規奈米囊泡技術，穩定直達核心。" width="1314" height="687"></picture></article>
+    </div>
+  </section>
+
+  <section class="jhk-section jhk-section--ribbon jhk-cert" id="jhk-certificates" aria-labelledby="jhk-cert-title">
+    <div class="exact-heading exact-heading--cert"><h2 id="jhk-cert-title" class="exact-sr">榮獲近40項國際證照與評鑑</h2><picture class=""><source media="(max-width:768px)" srcset="設計稿精準還原版_圖片/07_證照/標題_手機.webp"><img src="設計稿精準還原版_圖片/07_證照/標題_桌機.webp" alt="榮獲近40項國際證照與評鑑" width="2880" height="375"></picture></div>
+    <div class="jhk-wrap"><div class="jhk-carousel" data-carousel data-per-view="6" data-tablet-view="4" data-mobile-view="3" aria-label="國際證照與評鑑文件">
+      <div class="jhk-track" id="jhkCertTrack"></div><button class="jhk-arrow prev" type="button" aria-label="上一組證照">‹</button><button class="jhk-arrow next" type="button" aria-label="下一組證照">›</button><div class="jhk-dots"></div>
+    </div><p class="jhk-cert-more"><a href="https://www.healthjhk.com/Security-verification" id="jhkCertMore">查看完整檢驗報告 →</a></p></div>
+  </section>
+
+  <section class="jhk-section jhk-section--ribbon jhk-news-area" id="jhk-news" aria-labelledby="jhk-news-title">
+    <div class="exact-heading exact-heading--news"><h2 id="jhk-news-title" class="exact-sr">科研登上國際｜專業被看見</h2><picture class=""><source media="(max-width:768px)" srcset="設計稿精準還原版_圖片/08_新聞報導/標題_手機.webp"><img src="設計稿精準還原版_圖片/08_新聞報導/標題_桌機.webp" alt="科研登上國際｜專業被看見" width="2880" height="450"></picture></div>
+    <div class="jhk-wrap"><div class="jhk-carousel" data-carousel data-per-view="3" aria-label="新聞媒體報導">
+      <div class="jhk-track" id="jhkNewsTrack"></div><button class="jhk-arrow prev" type="button" aria-label="上一組新聞">‹</button><button class="jhk-arrow next" type="button" aria-label="下一組新聞">›</button><div class="jhk-dots"></div>
+    </div></div>
+  </section>
+
+  <section class="jhk-section jhk-cta-area" id="jhk-contact" aria-label="諮詢與會員服務">
+    <div class="jhk-wrap jhk-cta__row">
+      <a class="jhk-cta__item" href="tel:0809070216"><img src="設計稿精準還原版_圖片/09_聯絡按鈕/按鈕_電話諮詢.webp" alt="0809-070-216 免費諮詢" width="1110" height="400"></a>
+      <a class="jhk-cta__item" href="https://line.me/R/ti/p/@750lbmxq" target="_blank" rel="noopener"><img src="設計稿精準還原版_圖片/09_聯絡按鈕/按鈕_加入LINE.webp" alt="加入官方LINE" width="1110" height="400"></a>
+      <a class="jhk-cta__item" href="https://www.healthjhk.com/register"><img src="設計稿精準還原版_圖片/09_聯絡按鈕/按鈕_加入會員.webp" alt="免費加入會員" width="1110" height="400"></a>
+    </div>
+  </section>
+
+<footer class="jhk-footer" id="jhk-footer" aria-label="公司資訊與社群連結"><div class="jhk-wrap jhk-footer__inner">
+ <div class="jhk-footer__brand"><a href="#jhk-design-home" aria-label="回金禾康首頁"><img src="設計稿精準還原版_圖片/10_頁尾/頁尾Logo.png" alt="金禾康 食用泌體專家" width="350" loading="lazy"></a></div>
+ <div class="jhk-footer__info"><strong>金禾康健康科技有限公司</strong><span>統一編號：91115608</span><span>聯絡地址：台中市北屯區中清路二段17號6樓</span><span>客服專線：<a href="tel:0809070216">0809-070-216</a></span><span>服務時間：周一至周五 AM09:00 ~ PM06:00</span></div>
+ <div class="jhk-footer__social" role="group" aria-label="金禾康社群平台">
+  <a href="https://www.facebook.com/profile.php?id=61590854039057" target="_blank" rel="noopener noreferrer" aria-label="Facebook（另開視窗）" title="Facebook"><img src="設計稿精準還原版_圖片/10_頁尾/社群_Facebook.png" alt="" width="240" height="240"></a>
+  <a id="jhk-social-youtube" href="https://www.youtube.com/@jhkbio" target="_blank" rel="noopener noreferrer" aria-label="YouTube（另開視窗）" title="YouTube"><img src="設計稿精準還原版_圖片/10_頁尾/社群_YouTube.png" alt="" width="240" height="240"></a>
+  <a href="https://line.me/R/ti/p/@750lbmxq" target="_blank" rel="noopener noreferrer" aria-label="LINE（另開視窗）" title="LINE"><img src="設計稿精準還原版_圖片/10_頁尾/社群_LINE.png" alt="" width="244" height="240"></a>
+  <a href="https://www.instagram.com/jhkbio/" target="_blank" rel="noopener noreferrer" aria-label="Instagram（另開視窗）" title="Instagram"><img src="設計稿精準還原版_圖片/10_頁尾/社群_Instagram.png" alt="" width="240" height="240"></a>
+ </div>
+ <small class="jhk-footer__copyright">© 2026 金禾康 All Rights Reserved.</small>
+</div></footer>
+
+
+  <div class="jhk-float exact-float" role="navigation" aria-label="快捷服務"><img src="設計稿精準還原版_圖片/11_右側浮動快捷列/浮動快捷列.webp" alt="" aria-hidden="true" width="468" height="1715"><a class="exact-float-link" href="tel:0809070216" aria-label="撥打客服0809-070-216"></a><a class="exact-float-link" href="https://line.me/R/ti/p/@750lbmxq" target="_blank" rel="noopener" aria-label="加入官方LINE"></a><a class="exact-float-link" href="https://www.healthjhk.com/register" aria-label="加入會員"></a></div>
+  <div class="jhk-modal" id="jhkVideoModal" hidden><div class="jhk-modal__backdrop" data-close></div><div class="jhk-modal__box" role="dialog" aria-modal="true" aria-label="影片播放"><button class="jhk-modal__close" type="button" data-close aria-label="關閉影片">×</button><div class="jhk-modal__frame" id="jhkVideoFrame"></div><div class="jhk-modal__details"><span id="jhkVideoTitle"></span><a id="jhkVideoExternal" href="https://www.youtube.com/@jhkbio" target="_blank" rel="noopener noreferrer">在 YouTube 開啟 ↗</a></div></div></div>
+</div>
+
+<script>
+var jhkDoctorData = {
+  "items": [
+    {
+      "img": "設計稿精準還原版_圖片/04_專業團隊/專家_01.webp",
+      "name": "李昆達 教授｜台大生技研發領域 專家顧問",
+      "link": ""
+    },
+    {
+      "img": "設計稿精準還原版_圖片/04_專業團隊/專家_02.webp",
+      "name": "黃兆康 醫師｜心臟血管專科醫學 專業顧問",
+      "link": ""
+    },
+    {
+      "img": "設計稿精準還原版_圖片/04_專業團隊/專家_03.webp",
+      "name": "劉薰堉 藥師｜醫藥研發專業背景",
+      "link": ""
+    },
+    {
+      "img": "設計稿精準還原版_圖片/04_專業團隊/專家_04.webp",
+      "name": "Chloe Wu 營養師｜生技品牌研發顧問",
+      "link": ""
+    },
+    {
+      "img": "設計稿精準還原版_圖片/04_專業團隊/專家_05.webp",
+      "name": "廖安儀 管理師｜保健食品研發技術／專案管理",
+      "link": ""
+    },
+    {
+      "img": "設計稿精準還原版_圖片/04_專業團隊/專家_06.webp",
+      "name": "楊盈芝 營養師｜生技品牌研發顧問",
+      "link": ""
+    },
+    {
+      "img": "設計稿精準還原版_圖片/04_專業團隊/專家_07.webp",
+      "name": "Alen Su 營養師｜生技品牌研發顧問",
+      "link": ""
+    },
+    {
+      "img": "設計稿精準還原版_圖片/04_專業團隊/專家_08.webp",
+      "name": "Stella Wang 營養師｜生技品牌研發顧問",
+      "link": ""
+    },
+    {
+      "img": "設計稿精準還原版_圖片/04_專業團隊/專家_09.webp",
+      "name": "Jamie Hsieh 博士｜生技研發權威生化",
+      "link": ""
+    }
+  ]
+};
+var jhkHotData = {
+  "items": [
+    {
+      "img": "設計稿精準還原版_圖片/05_熱銷商品/商品_01.webp",
+      "name": "【來電立即享超優惠價！】CARDISOME 循利寧芯泌體 素食膠囊(60入)",
+      "price": "NT $5,880",
+      "link": "https://www.healthjhk.com/%E9%87%91%E7%A6%BE%E5%BA%B7-%E5%BE%AA%E5%88%A9%E5%AF%A7%E8%8A%AF%E6%B3%8C%E9%AB%94"
+    },
+    {
+      "img": "設計稿精準還原版_圖片/05_熱銷商品/商品_02.jpg",
+      "name": "【 來電立即享超優惠價！】CARDISOME 循利寧芯泌體 素食膠囊(10入)",
+      "price": "NT $990",
+      "link": "https://www.healthjhk.com/product/product&product_id=9"
+    },
+    {
+      "img": "設計稿精準還原版_圖片/05_熱銷商品/商品_03.jpg",
+      "name": "【 來電立即享超優惠價！】威瑪舒培 健字號大紅麴(30入)",
+      "price": "NT $2,580",
+      "link": "https://www.healthjhk.com/product/product&product_id=10"
+    },
+    {
+      "img": "設計稿精準還原版_圖片/05_熱銷商品/商品_04.jpg",
+      "name": "【來電立即享超優惠價！】金禾康 健字號德國頂級魚油(30入)",
+      "price": "NT $2,580",
+      "link": "https://www.healthjhk.com/product/product&product_id=17"
+    },
+    {
+      "img": "設計稿精準還原版_圖片/05_熱銷商品/商品_05.jpg",
+      "name": "【來電立即享超優惠價！】RENSOME 慎泌體膠囊(60入)",
+      "price": "NT $5,580",
+      "link": "https://www.healthjhk.com/product/product&product_id=16"
+    },
+    {
+      "img": "設計稿精準還原版_圖片/05_熱銷商品/商品_06.jpg",
+      "name": "【 來電立即享超優惠價！】GLYCOSOME 醣泌體膠囊(60入)",
+      "price": "NT $5,580",
+      "link": "https://www.healthjhk.com/product/product&product_id=15"
+    },
+    {
+      "img": "設計稿精準還原版_圖片/05_熱銷商品/商品_07.jpg",
+      "name": "【來電立即享超優惠價！】威瑪舒培 健字號活力錠(60入)",
+      "price": "NT $5,580",
+      "link": "https://www.healthjhk.com/product/product&product_id=14"
+    },
+    {
+      "img": "設計稿精準還原版_圖片/05_熱銷商品/商品_08.jpg",
+      "name": "【 來電立即享超優惠價！】BONSOME 谷泌體膠囊(60入)",
+      "price": "NT $5,580",
+      "link": "https://www.healthjhk.com/product/product&product_id=13"
+    },
+    {
+      "img": "設計稿精準還原版_圖片/05_熱銷商品/商品_09.jpg",
+      "name": "【 來電立即享超優惠價！】VISSOME 視泌體膠囊(60入)",
+      "price": "NT $5,580",
+      "link": "https://www.healthjhk.com/product/product&product_id=12"
+    },
+    {
+      "img": "設計稿精準還原版_圖片/05_熱銷商品/商品_10.jpg",
+      "name": "【 來電立即享超優惠價！】MEMOSOME 憶泌體膠囊(60入)",
+      "price": "NT $5,880",
+      "link": "https://www.healthjhk.com/product/product&product_id=11"
+    }
+  ]
+};
+var jhkCertData = {
+  "report_url": "#",
+  "items": [
+    {
+      "name": "俄羅斯<br>發明專利<br>（N. 2523384)",
+      "img": "設計稿精準還原版_圖片/07_證照/證照_01.webp",
+      "link": ""
+    },
+    {
+      "name": "義大利經濟發展部<br>工業發明專利<br>（Ν. 0001392535）",
+      "img": "設計稿精準還原版_圖片/07_證照/證照_02.webp",
+      "link": ""
+    },
+    {
+      "name": "土耳其專利局<br>專利證書<br>（No: TR 2012 13227 T4）",
+      "img": "設計稿精準還原版_圖片/07_證照/證照_03.webp",
+      "link": ""
+    },
+    {
+      "name": "澳大利亞<br>標準專利<br>（2009315289）",
+      "img": "設計稿精準還原版_圖片/07_證照/證照_04.webp",
+      "link": ""
+    },
+    {
+      "name": "日本特許廳<br>專利證書<br>(特許第6828054号)",
+      "img": "設計稿精準還原版_圖片/07_證照/證照_05.webp",
+      "link": ""
+    },
+    {
+      "name": "中國國家知識產權局<br>發明專利證書（專利號: ZL 2018 1 1648298.1）",
+      "img": "設計稿精準還原版_圖片/07_證照/證照_06.webp",
+      "link": ""
+    },
+    {
+      "name": "印尼法律與人權部<br>專利證書<br>（No: IDP000069231）",
+      "img": "設計稿精準還原版_圖片/07_證照/證照_07.jpg",
+      "link": ""
+    },
+    {
+      "name": "韓國特許廳專利證書<br>（第 10-2320465 호）",
+      "img": "設計稿精準還原版_圖片/07_證照/證照_08.jpg",
+      "link": ""
+    },
+    {
+      "name": "德國專利商標局<br>新型專利證書<br>（Nr.20 2025 103 452）",
+      "img": "設計稿精準還原版_圖片/07_證照/證照_09.jpg",
+      "link": ""
+    },
+    {
+      "name": "中華民國專利證書<br>(新型第 M675349 號)",
+      "img": "設計稿精準還原版_圖片/07_證照/證照_10.jpg",
+      "link": ""
+    },
+    {
+      "name": "日本特許廳實用新案登錄證<br>(登錄第3252509號)",
+      "img": "設計稿精準還原版_圖片/07_證照/證照_11.jpg",
+      "link": ""
+    },
+    {
+      "name": "中華民國智慧財產局<br>發明專利說明書<br>（公開編號）<br>TW 201031418 A1",
+      "img": "設計稿精準還原版_圖片/07_證照/證照_12.jpg",
+      "link": ""
+    },
+    {
+      "name": "日本特許廳<br>專利證書<br>（特許第3250610號）",
+      "img": "設計稿精準還原版_圖片/07_證照/證照_13.jpg",
+      "link": ""
+    },
+    {
+      "name": "中華民國專利證書<br>（新型第 M667623號)",
+      "img": "設計稿精準還原版_圖片/07_證照/證照_14.jpg",
+      "link": ""
+    },
+    {
+      "name": "德國專利商標局<br>新型專利專利書<br>（DE 20 2024 106 363 U1）",
+      "img": "設計稿精準還原版_圖片/07_證照/證照_15.jpg",
+      "link": ""
+    },
+    {
+      "name": "美國專利商標局<br>專利申請公開書<br>（US 20100022633A1）",
+      "img": "設計稿精準還原版_圖片/07_證照/證照_16.jpg",
+      "link": ""
+    },
+    {
+      "name": "歐洲專利局 <br>(Espacenet) 書目資料<br>(WO2004103411 A1)",
+      "img": "設計稿精準還原版_圖片/07_證照/證照_17.jpg",
+      "link": ""
+    },
+    {
+      "name": "慎泌體膠囊 芽孢益生菌 <br>ATM 測試報告<br>（報告編號：26060363）",
+      "img": "設計稿精準還原版_圖片/07_證照/證照_18.jpg",
+      "link": ""
+    },
+    {
+      "name": "歐洲專利局 (Espacenet) <br>書目資料<br>(WO2012057635 A1)",
+      "img": "設計稿精準還原版_圖片/07_證照/證照_19.jpg",
+      "link": ""
+    },
+    {
+      "name": "歐洲專利局歐洲專利證書<BR>（European Patent No. 3181143）",
+      "img": "設計稿精準還原版_圖片/07_證照/證照_20.jpg",
+      "link": ""
+    },
+    {
+      "name": "美國專利商標局<BR>專利申請公開書<BR>US 20100129294 A1",
+      "img": "設計稿精準還原版_圖片/07_證照/證照_21.jpg",
+      "link": ""
+    },
+    {
+      "name": "中國國家知識產權局<BR>發明專利申請公開書<BR>\r\nCN 102215853 A",
+      "img": "設計稿精準還原版_圖片/07_證照/證照_22.jpg",
+      "link": ""
+    },
+    {
+      "name": "世界智慧財產權組織國際<BR>申請公開書<BR>WO 2010/055490 A3",
+      "img": "設計稿精準還原版_圖片/07_證照/證照_23.jpg",
+      "link": ""
+    },
+    {
+      "name": "世界智慧財產權<BR>組織國際申請書<BR>WO 2006/126895 A3",
+      "img": "設計稿精準還原版_圖片/07_證照/證照_24.jpg",
+      "link": ""
+    },
+    {
+      "name": "原料合作廠國際期刊<BR>學術研究發表",
+      "img": "設計稿精準還原版_圖片/07_證照/證照_25.jpg",
+      "link": ""
+    },
+    {
+      "name": "原料合作廠國際期刊<BR>學術研究發表",
+      "img": "設計稿精準還原版_圖片/07_證照/證照_26.jpg",
+      "link": ""
+    },
+    {
+      "name": "原料合作廠國際期刊<BR>學術研究發表",
+      "img": "設計稿精準還原版_圖片/07_證照/證照_27.jpg",
+      "link": ""
+    },
+    {
+      "name": "原料合作廠國際期刊<BR>學術研究發表",
+      "img": "設計稿精準還原版_圖片/07_證照/證照_28.jpg",
+      "link": ""
+    },
+    {
+      "name": "運動與運動醫學公開期刊<BR>（Sport Exerc Med Open J. 2023）",
+      "img": "設計稿精準還原版_圖片/07_證照/證照_29.jpg",
+      "link": ""
+    },
+    {
+      "name": "谷泌體膠囊 芽孢益生菌<BR>ATM 測試報告<BR>（報告編號：26060668）",
+      "img": "設計稿精準還原版_圖片/07_證照/證照_30.jpg",
+      "link": ""
+    },
+    {
+      "name": "視泌體膠囊 芽孢益生菌<br>ATM 測試報告<br>（報告編號：26060670）",
+      "img": "設計稿精準還原版_圖片/07_證照/證照_31.jpg",
+      "link": ""
+    },
+    {
+      "name": "芯泌體膠囊 芽孢益生菌 <br>ATM 測試報告<br>（報告編號：26060666）",
+      "img": "設計稿精準還原版_圖片/07_證照/證照_32.jpg",
+      "link": ""
+    },
+    {
+      "name": "憶泌體膠囊 芽孢益生菌<br>ATM 測試報告<br>（報告編號：26060363）",
+      "img": "設計稿精準還原版_圖片/07_證照/證照_33.jpg",
+      "link": ""
+    },
+    {
+      "name": "《應用微生物學與生物技術》<br>國際期刊研究論文",
+      "img": "設計稿精準還原版_圖片/07_證照/證照_34.jpg",
+      "link": ""
+    },
+    {
+      "name": "《應用微生物學與生物技術》<br>國際期刊研究論文",
+      "img": "設計稿精準還原版_圖片/07_證照/證照_35.jpg",
+      "link": ""
+    },
+    {
+      "name": "外泌體定量細胞報告",
+      "img": "設計稿精準還原版_圖片/07_證照/證照_36.jpg",
+      "link": ""
+    }
+  ]
+};
+var jhkVideoData = {
+  "items": [
+    {
+      "yt": "NxlMma9kdDk",
+      "name": "循利寧芯泌體 電視廣告",
+      "thumb": "設計稿精準還原版_圖片/03_影片縮圖/影片_01.webp"
+    },
+    {
+      "yt": "CqrOoNHZZY0",
+      "name": "徐乃麟的巔峰祕訣！循利寧芯泌體",
+      "thumb": "設計稿精準還原版_圖片/03_影片縮圖/影片_02.webp"
+    },
+    {
+      "yt": "NxlMma9kdDk",
+      "name": "循利寧芯泌體 電視廣告",
+      "thumb": "設計稿精準還原版_圖片/03_影片縮圖/影片_03.webp"
+    }
+  ]
+};
+var jhkNewsData = {
+  "items": [
+    {
+      "yt": "pWwoywZim3U",
+      "name": "全台首發！植物囊泡保健新科技",
+      "desc": "非凡商業新聞｜植物囊泡保健技術報導",
+      "link": "",
+      "thumb": "設計稿精準還原版_圖片/08_新聞報導/新聞_01.webp"
+    },
+    {
+      "yt": "IrL9R2Ts0Gc",
+      "name": "生化團隊主導產品研發",
+      "desc": "中天新聞｜台大團隊研發與代言人發表",
+      "link": "",
+      "thumb": "設計稿精準還原版_圖片/08_新聞報導/新聞_02.webp"
+    },
+    {
+      "yt": "hChIQLOxVfg",
+      "name": "突破科技開啟保健新紀元",
+      "desc": "中視新聞｜新品科技與健康大使報導",
+      "link": "",
+      "thumb": "設計稿精準還原版_圖片/08_新聞報導/新聞_03.webp"
+    }
+  ]
+};
+(function () {
+ 'use strict';
+ const home = document.getElementById('jhk-design-home');
+ const escape = value => String(value || '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+ const bg = value => ' style="background-image:url(&quot;' + escape(value) + '&quot;)"';
+ const phone = '<svg viewBox="0 0 24 24"><path d="M5 3H3a1 1 0 0 0-1 1c0 10 8 18 18 18a1 1 0 0 0 1-1v-3l-5-2-2 2a16 16 0 0 1-8-8l2-2-3-5Z"/><path d="M14 3a7 7 0 0 1 7 7M14 7a3 3 0 0 1 3 3"/></svg>';
+ const member = '<svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M3 22v-3a9 9 0 0 1 18 0v3Z"/></svg>';
+ home.querySelectorAll('[data-icon]').forEach(el => { el.innerHTML = el.dataset.icon === 'phone' ? phone : member; });
+
+ document.getElementById('jhkDoctorGrid').innerHTML = jhkDoctorData.items.map(it =>
+  it.link ? '<a class="jhk-doctor__card"' + bg(it.img) + ' href="' + escape(it.link) + '" aria-label="' + escape(it.name) + '"></a>'
+          : '<div class="jhk-doctor__card"' + bg(it.img) + ' role="img" aria-label="' + escape(it.name) + '"></div>').join('');
+ document.getElementById('jhkHotTrack').innerHTML = jhkHotData.items.map(it => '<article class="jhk-hot__card">'
+  + '<a class="jhk-hot__img"' + bg(it.img) + ' href="' + escape(it.link) + '" aria-label="' + escape(it.name) + '"></a>'
+  + '<div class="jhk-hot__info"><a class="name" href="' + escape(it.link) + '">' + escape(it.name) + '</a><div class="price">' + escape(it.price) + '</div>'
+  // 維持原有商品頁入口；需選擇的規格、數量及購物車由 QDM 商品頁處理。
+  + '<div class="jhk-hot__actions"><a class="jhk-btn green" href="' + escape(it.link) + '" aria-label="前往商品頁加入購物車：' + escape(it.name) + '">加入購物車</a><a class="jhk-btn gold" href="' + escape(it.link) + '">立即購買</a></div></div></article>').join('');
+ document.getElementById('jhkCertTrack').innerHTML = jhkCertData.items.map(it => '<a class="jhk-cert__doc" href="' + escape(it.link || it.img) + '" target="_blank" rel="noopener" aria-label="查看' + escape(it.name.replace(/<br\s*\/?\s*>/gi,' ')) + '"><div class="img"' + bg(it.img) + '></div><div class="cap">' + escape(it.name).replace(/&lt;br\s*\/?\s*&gt;/gi,'<br>') + '</div></a>').join('');
+ if (jhkCertData.report_url && jhkCertData.report_url !== '#') document.getElementById('jhkCertMore').href = jhkCertData.report_url;
+ function ytId(v) { const m = String(v || '').match(/(?:youtu\.be\/|[?&]v=|embed\/|shorts\/)([\w-]{11})/); return m ? m[1] : (/^[\w-]{11}$/.test(v || '') ? v : ''); }
+ document.getElementById('jhkVideoTrack').innerHTML = jhkVideoData.items.map(it => '<button type="button" class="jhk-video__card" data-yt="' + escape(ytId(it.yt)) + '" aria-label="播放：' + escape(it.name) + '"><div class="jhk-video__thumb"' + bg(it.thumb) + '><span class="play" aria-hidden="true">▶</span></div><div class="jhk-video__name">' + escape(it.name) + '</div></button>').join('');
+ document.getElementById('jhkNewsTrack').innerHTML = jhkNewsData.items.map(it => '<article class="jhk-news__card"><button type="button" class="jhk-news__thumb" data-yt="' + escape(ytId(it.yt)) + '" aria-label="播放：' + escape(it.name) + '" style="' + 'background-image:url(&quot;' + escape(it.thumb) + '&quot;);display:block;width:calc(100% - 16px);padding:0;border:0;"><span class="play" aria-hidden="true">▶</span></button><div class="jhk-news__body"><div class="cap">' + escape(it.name) + '</div><p class="desc">' + escape(it.desc) + '</p>' + (it.link ? '<a class="jhk-news__more" href="' + escape(it.link) + '">閱讀更多 →</a>' : '') + '</div></article>').join('');
+
+ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+ home.querySelectorAll('[data-carousel]').forEach(box => {
+  const track = box.querySelector('.jhk-track, .jhk-doctor__grid');
+  const prev = box.querySelector('.prev'), next = box.querySelector('.next'), dotbox = box.querySelector('.jhk-dots');
+  let per = 1, pages = 1, step = 0, timer, paused = false, focused = false;
+  function index() { return Math.min(pages - 1, Math.max(0,Math.round(track.scrollLeft / (step || 1)))); }
+  function sync() { Array.from(dotbox.children).forEach((button,i) => button.setAttribute('aria-current', i === index() ? 'true' : 'false')); }
+  function go(page) { const to = (page + pages) % pages; track.scrollTo({left: Math.min(to * step, Math.max(0,track.scrollWidth-track.clientWidth)),behavior: reduceMotion.matches ? 'instant' : 'smooth'}); }
+  function reset() { clearInterval(timer); if (box.hasAttribute('data-autoplay') && !reduceMotion.matches && !paused && !focused && !document.hidden && pages > 1) timer=setInterval(() => go(index()+1),6000); }
+  function refresh() {
+   const width = window.innerWidth, desktopTeam = box.hasAttribute('data-team') && width > 768;
+   const oldIndex = index();
+   per = width <= 768 ? Number(box.dataset.mobileView || 1) : width < 1200 ? Number(box.dataset.tabletView || Math.min(2,Number(box.dataset.perView || 3))) : Number(box.dataset.perView || 3);
+   if (desktopTeam) {
+    Array.from(track.children).forEach(child=>{child.style.flex='';child.style.width='';}); pages=1;
+   } else {
+    const gap=parseFloat(getComputedStyle(track).columnGap)||0;
+    const cardWidth=(track.clientWidth-gap*(per-1))/per;
+    Array.from(track.children).forEach(child=>{child.style.flex='0 0 '+cardWidth+'px';child.style.width=cardWidth+'px';});
+    step=(cardWidth+gap)*per; pages=Math.max(1,Math.ceil(track.children.length/per));
+   }
+   dotbox.replaceChildren();
+   for(let i=0;i<pages;i++) { const button=document.createElement('button');button.type='button';button.setAttribute('aria-label','第 '+(i+1)+' 組，共 '+pages+' 組');button.addEventListener('click',()=>{go(i);reset();});dotbox.appendChild(button); }
+   prev.hidden=next.hidden=dotbox.hidden=pages<=1;
+   track.scrollLeft=desktopTeam ? 0 : Math.min(oldIndex,pages-1)*step;
+   sync();reset();
+  }
+  prev.addEventListener('click',()=>{go(index()-1);reset();});next.addEventListener('click',()=>{go(index()+1);reset();});
+  track.addEventListener('scroll',sync,{passive:true});
+  box.addEventListener('mouseenter',()=>{paused=true;reset();});box.addEventListener('mouseleave',()=>{paused=false;reset();});
+  box.addEventListener('focusin',()=>{focused=true;reset();});box.addEventListener('focusout',()=>{focused=false;reset();});
+  document.addEventListener('visibilitychange',reset);reduceMotion.addEventListener('change',reset);
+  let down=false,startX=0,startScroll=0,moved=false;
+  track.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse'||e.button!==0||track.scrollWidth<=track.clientWidth+1)return;down=true;moved=false;startX=e.clientX;startScroll=track.scrollLeft;});
+  window.addEventListener('pointermove',e=>{if(!down)return;const dx=e.clientX-startX;if(Math.abs(dx)>6){moved=true;track.classList.add('is-dragging');track.scrollLeft=startScroll-dx;}});
+  window.addEventListener('pointerup',()=>{down=false;track.classList.remove('is-dragging');reset();});
+  track.addEventListener('dragstart',e=>e.preventDefault());track.addEventListener('click',e=>{if(moved){e.preventDefault();e.stopPropagation();moved=false;}},true);
+  let lastWidth=-1;const observer=new ResizeObserver(()=>{if(track.clientWidth!==lastWidth){lastWidth=track.clientWidth;refresh();}});observer.observe(track);
+  box._refresh=refresh;refresh();
+ });
+
+ const modal=document.getElementById('jhkVideoModal'), frame=document.getElementById('jhkVideoFrame'), close=modal.querySelector('button');
+ let opener, previousOverflow='';
+ function closeVideo(){modal.hidden=true;frame.replaceChildren();document.body.style.overflow=previousOverflow;if(opener)opener.focus();}
+ home.addEventListener('click',e=>{const closeTarget=e.target.closest('[data-close]');if(closeTarget){closeVideo();return;}const card=e.target.closest('[data-yt]');if(!card)return;opener=card;previousOverflow=document.body.style.overflow;const id=ytId(card.dataset.yt);frame.replaceChildren();document.getElementById('jhkVideoTitle').textContent=(card.getAttribute('aria-label')||'').replace(/^播放：/,'');document.getElementById('jhkVideoExternal').href='https://www.youtube.com/watch?v='+id;if(id){const iframe=document.createElement('iframe');const params=new URLSearchParams({autoplay:'1',rel:'0',playsinline:'1'});if(/^https?:$/.test(location.protocol))params.set('origin',location.origin);iframe.src='https://www.youtube.com/embed/'+id+'?'+params.toString();iframe.title=card.getAttribute('aria-label');iframe.referrerPolicy='strict-origin-when-cross-origin';iframe.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';iframe.allowFullscreen=true;frame.append(iframe);}else{const p=document.createElement('p');p.textContent='影片準備中，歡迎透過 LINE 洽詢更多資訊。';frame.append(p);}modal.hidden=false;document.body.style.overflow='hidden';close.focus();});
+ document.addEventListener('keydown',e=>{if(modal.hidden)return;if(e.key==='Escape')closeVideo();if(e.key==='Tab'&&!frame.querySelector('iframe')){e.preventDefault();close.focus();}});
+ // 只補強現有固定導覽列的輔助標示；不更動 QDM 帳號與購物流程。
+ const menuButton=document.querySelector('#jhkg-master-nav .mobile-menu-btn');
+ if(menuButton){menuButton.setAttribute('role','button');menuButton.tabIndex=0;menuButton.setAttribute('aria-label','開啟主選單');menuButton.setAttribute('aria-controls','jhkg-menu-list');menuButton.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();menuButton.click();}});}
+})();
+
+</script>
+
+<script>
+(function(){
+ const button=document.querySelector('.exact-mobile-nav .nav-menu');
+ const drawer=document.getElementById('exact-drawer');
+ function close(){drawer.hidden=true;button.setAttribute('aria-expanded','false');}
+ button.addEventListener('click',()=>{drawer.hidden=!drawer.hidden;button.setAttribute('aria-expanded',String(!drawer.hidden));});
+ drawer.addEventListener('click',e=>{if(e.target.closest('a'))close();});
+ document.addEventListener('click',e=>{if(!e.target.closest('.exact-nav'))close();});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!drawer.hidden){close();button.focus();}});
+ const mq=window.matchMedia('(max-width:768px)');
+ function firstNews(){setTimeout(()=>{const track=document.getElementById('jhkNewsTrack');track.scrollTo({left:0,behavior:'instant'});},80);}
+ mq.addEventListener('change',firstNews);firstNews();
+})();
+
+</script>
+
+<script>
+(function(){
+ const home=document.getElementById('jhk-design-home');
+ const selector='a[href],button,[role="button"]';
+ home.addEventListener('click',event=>{
+  const button=event.target.closest(selector);
+  if(!button||!home.contains(button))return;
+  button.classList.add('jhk-pressed');
+  setTimeout(()=>button.classList.remove('jhk-pressed'),160);
+ });
+ // Retain the original composite artwork; render its button regions as live layers.
+ const groups=[];
+ const nav=home.querySelector('.exact-nav');
+ groups.push({image:nav.querySelector('picture img'),buttons:()=>[...nav.querySelectorAll('.exact-desktop-nav>a,.exact-mobile-nav>a,.exact-mobile-nav>button')]});
+ const floating=home.querySelector('.exact-float');
+ groups.push({image:floating.querySelector('img'),buttons:()=>[...floating.querySelectorAll('a')]});
+ home.querySelectorAll('.jhk-banner__slide').forEach(slide=>groups.push({image:slide.querySelector('picture img'),buttons:()=>[...slide.querySelectorAll('.jhk-banner__links a')]}));
+ function refresh(){
+  groups.forEach(group=>{
+   const img=group.image,r=img.getBoundingClientRect();
+   const buttons=group.buttons();
+   if(!r.width||!r.height||!img.complete){
+    img.style.clipPath='';
+    buttons.forEach(button=>{button.classList.remove('jhk-art-button');button.querySelector('.jhk-button-art')?.remove();});
+    return;
+   }
+   const holes=[];
+   buttons.forEach(button=>{
+    const box=button.getBoundingClientRect();
+    if(!box.width||!box.height)return;
+    const x=box.left-r.left,y=box.top-r.top;
+    let art=button.querySelector('.jhk-button-art');
+    if(!art){art=document.createElement('span');art.className='jhk-button-art';art.setAttribute('aria-hidden','true');button.append(art);}
+    button.classList.add('jhk-art-button');
+    art.style.backgroundImage='url("'+(img.currentSrc||img.src)+'")';
+    art.style.backgroundSize=r.width+'px '+r.height+'px';
+    art.style.backgroundPosition=(-x)+'px '+(-y)+'px';
+    holes.push('M'+x+' '+y+'h'+box.width+'v'+box.height+'h'+(-box.width)+'Z');
+   });
+   img.style.clipPath='path(evenodd,"M0 0H'+r.width+'V'+r.height+'H0Z '+holes.join(' ')+'")';
+  });
+ }
+ let frame;
+ const schedule=()=>{cancelAnimationFrame(frame);frame=requestAnimationFrame(refresh);};
+ const observer=new ResizeObserver(schedule);
+ groups.forEach(group=>{observer.observe(group.image);group.image.addEventListener('load',schedule);});
+ window.addEventListener('resize',schedule);
+ refresh();
+})();
+
+</script>
+</body>
+</html>

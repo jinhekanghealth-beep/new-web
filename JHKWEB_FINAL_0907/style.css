@@ -587,7 +587,7 @@ html.is-jhk-design { scroll-behavior: smooth; scroll-padding-top: 120px; }
 
 /* 40｜浮動服務列精準版：底框、客服、LINE、會員分層定位並維持可編輯文字。 */
 /* 使用四張獨立原稿：背景框一層，每個 ICON 與可編輯文字一組。 */
-.jhk-exact .exact-float { position:fixed!important; top:50vh!important; top:50dvh!important; bottom:auto!important; transform:translateY(-50%)!important; overflow:visible; background:none; border:0; border-radius:0; scale:1.5; transform-origin:center right; }
+.jhk-exact .exact-float { position:fixed!important; top:auto!important; right:calc(8px + env(safe-area-inset-right, 0px))!important; bottom:calc(16px + env(safe-area-inset-bottom, 0px))!important; left:auto!important; transform:none!important; overflow:visible; background:none; border:0; border-radius:0; scale:1.5; transform-origin:bottom right; }
 .jhk-exact .exact-float__background { display:block; width:100%; height:auto; border-radius:999px; object-fit:contain; pointer-events:none; }
 .jhk-exact .exact-float__items { position:absolute; inset:4% 10%; display:flex; flex-direction:column; justify-content:space-between; overflow:visible; }
 .jhk-exact .exact-float .exact-float-link { position:relative; inset:auto; display:flex; flex-direction:column; align-items:center; gap:clamp(3px,.35vw,6px); width:100%; height:auto; padding:0; border:0; border-radius:0; background:none; overflow:visible; transform-origin:center; color:#173c34; font-size:clamp(11px,1vw,16px); font-weight:700; line-height:1.2; text-align:center; }
@@ -662,5 +662,28 @@ html.is-jhk-design { scroll-behavior: smooth; scroll-padding-top: 120px; }
   font-weight:700;
   line-height:1.4;
   letter-spacing:.08em;
+ }
+}
+
+/* 43｜手機播放按鈕：避免文字三角形被行動裝置渲染成藍色 Emoji。 */
+@media(max-width:768px) {
+ .jhk-exact .jhk-video__thumb .play {
+  display:grid;
+  place-items:center;
+  color:transparent;
+  font-size:0!important;
+  line-height:1;
+  background:#fff;
+  border-radius:50%;
+ }
+ .jhk-exact .jhk-video__thumb .play::before {
+  content:"";
+  display:block;
+  width:0;
+  height:0;
+  border-top:calc(var(--u)*9) solid transparent;
+  border-bottom:calc(var(--u)*9) solid transparent;
+  border-left:calc(var(--u)*14) solid #a0a0a0;
+  margin-left:calc(var(--u)*3);
  }
 }

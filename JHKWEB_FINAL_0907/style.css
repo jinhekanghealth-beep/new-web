@@ -1,0 +1,666 @@
+/**
+ * 金禾康官網首頁樣式表
+ * 對應頁面：index_0904.html
+ *
+ * 維護導覽：
+ * 01 瀏覽器重設與舊站容器清理
+ * 02 全站變數、共用版型、輪播元件
+ * 03 主視覺、影音、團隊、商品、技術、證照、新聞
+ * 04 聯絡按鈕、頁尾、浮動工具、影片視窗
+ * 05 平板與手機響應式設定
+ * 06 精準設計稿尺寸覆寫與互動效果
+ *
+ * 維護原則：
+ * - 區塊尺寸與間距優先在對應章節調整。
+ * - 輪播箭頭與卡片寬度另受頁面底部 JavaScript 動態定位。
+ * - 請保留規則順序；後段「精準還原」設定會覆寫前段共用設定。
+ */
+
+/* 01｜瀏覽器重設：統一文字縮放與 body 預設外距。 */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}body{margin:0;}
+
+/* 2026-09-03 DESIGN：1920 桌機 / 390 手機；區塊高度由內容撐開。 */
+/* 02｜舊站環境清理：讓首頁內容脫離原 QDM 容器寬度，並隱藏舊頁首與舊頁尾。 */
+html.is-jhk-design { scroll-behavior: smooth; scroll-padding-top: 120px; }
+.is-jhk-design body { margin: 0; background: #fff; }
+.is-jhk-design #body-outer-container,
+.is-jhk-design #body-outer-container > .container-inner,
+.is-jhk-design #maincontent,
+.is-jhk-design #maincontent > .mainborder,
+.is-jhk-design #maincontent .content-top,
+.is-jhk-design #maincontent .flipper_wrap { width: 100%; max-width: none; margin: 0; padding: 0; border: 0; float: none; }
+.is-jhk-design #body-outer-container .row-fluid { margin: 0; }
+.is-jhk-design #header, .is-jhk-design #footer, .is-jhk-design #content-top,
+.is-jhk-design #jhkg-promo-top-box { display: none !important; }
+.is-jhk-design #jhkg-master-nav#jhkg-master-nav { height: 110px; background: #fff !important; background-image: none !important; color: #234a3e; padding: 0 max(24px, calc((100vw - 1728px)/2)); box-sizing: border-box; border-bottom: 1px solid #e3e9e5; box-shadow: 0 2px 12px #003e2310; }
+.is-jhk-design #jhkg-master-nav .jhkg-menu-item { color: #254638 !important; font-size: 16px; }
+.is-jhk-design #jhkg-master-nav .jhkg-nav-logo img { width: 190px; max-height: 64px; object-fit: contain; }
+/* 03｜全站設計變數與基礎文字：集中控制色彩、安全寬度、間距、字級及頁首高度。 */
+.jhk-home { --green: #00835d; --deep: #063c30; --gold: #b99224; --safe: 1728px; --gutter: 112px; --card-gap: 24px; --header-h: 110px; --text: 18px; --h2: 34px; color: #193f34; background: #fff; font-family: 'Microsoft JhengHei','PingFang TC',sans-serif; font-size: var(--text); line-height: 1.6; overflow: clip; padding-top: var(--header-h); }
+.jhk-home *, .jhk-home *::before, .jhk-home *::after { box-sizing: border-box; }
+.jhk-home img { max-width: 100%; height: auto; }
+.jhk-home button, .jhk-home input { font: inherit; }
+.jhk-home button, .jhk-home a { -webkit-tap-highlight-color: transparent; }
+.jhk-home button { cursor: pointer; }
+.jhk-home a { color: inherit; text-decoration: none; }
+.jhk-home a:focus-visible, .jhk-home button:focus-visible { outline: 3px solid #eea424; outline-offset: 4px; }
+.jhk-home h2, .jhk-home h3, .jhk-home p { line-height: 1.5; }
+/* 04｜共用內容容器與區塊標題：控制安全寬度、上下留白及綠金色標題帶。 */
+.jhk-wrap { width: min(var(--safe), calc(100% - var(--gutter))); margin-inline: auto; }
+.jhk-section { padding-block: clamp(36px, 4vw, 72px); }
+.jhk-section--ribbon { padding-top: 0; }
+.jhk-ribbon { position: relative; margin: 0; text-align: center; background: linear-gradient(90deg,#009772,#004721 30%,#006c47 70%,#009772); border-top: 5px solid transparent; border-image: linear-gradient(90deg,#917627,#fff68b,#9d7724) 1; }
+.jhk-ribbon h2 { position: relative; display: inline-block; min-width: min(62%,900px); max-width: calc(100% - 48px); margin: -5px 0 0; padding: 20px 42px; font-size: var(--h2); font-weight: 700; letter-spacing: .06em; background: #00835d; color: #fff; border-top: 5px solid #d5b44f; border-bottom: 5px solid #d5b44f; text-shadow: 1px 2px 3px #00381a60; }
+.jhk-ribbon--round { background: #00835d; }
+.jhk-ribbon--round h2 { margin-bottom: -24px; border-bottom: 0; border-radius: 0 0 48px 48px; color: #fff095; box-shadow: 0 5px 8px #00432125; z-index: 1; }
+/* 05｜共用輪播元件：控制橫向軌道、箭頭、分頁圓點與拖曳狀態。 */
+.jhk-carousel { position: relative; min-width: 0; }
+.jhk-track, .jhk-doctor__grid { scrollbar-width: none; }
+.jhk-track::-webkit-scrollbar, .jhk-doctor__grid::-webkit-scrollbar { display: none; }
+.jhk-track { display: flex; gap: var(--card-gap); overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; width: 100%; padding: 5px 0 10px; }
+.jhk-track > * { flex: 0 0 auto; min-width: 0; scroll-snap-align: start; }
+.jhk-track.is-dragging { scroll-snap-type: none; cursor: grabbing; }
+.jhk-arrow { position: absolute; z-index: 3; top: 45%; transform: translateY(-50%); width: 44px; height: 44px; border: 1px solid #99a49e; border-radius: 50%; background: #fff; color: #687a70; font-size: 34px !important; line-height: 1; display: grid; place-items: center; padding: 0 0 4px; box-shadow: 0 2px 5px #001a161c; }
+.jhk-arrow.prev { left: -24px; }
+.jhk-arrow.next { right: -24px; }
+.jhk-arrow[hidden], .jhk-dots[hidden] { display: none !important; }
+.jhk-dots { display: flex; justify-content: center; gap: 3px; margin: 15px 0 0; }
+.jhk-dots button { display: grid; place-items: center; background: transparent; border: 0; width: 28px; height: 30px; padding: 0; }
+.jhk-dots button::after { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #bfc5c2; }
+.jhk-dots button[aria-current='true']::after { background: #9b7b19; width: 10px; height: 10px; }
+/* 06｜主視覺 Banner：控制輪播圖片、桌機比例、分頁及圖片內互動區。 */
+.jhk-banner { position: relative; width: 100%; background: #eef4f4; }
+.jhk-banner__track { padding: 0; gap: 0; }
+.jhk-banner__slide { flex-basis: 100%; position: relative; }
+.jhk-banner picture, .jhk-banner picture img { display: block; width: 100%; }
+.jhk-banner picture img { aspect-ratio: 1920/825; object-fit: cover; }
+.jhk-banner .jhk-dots { position: absolute; bottom: 12px; inset-inline: 0; margin: 0; }
+.jhk-banner .jhk-dots button::after { background: #fff9; box-shadow: 0 0 2px #555; }
+.jhk-banner .jhk-dots button[aria-current='true']::after { background: #006b4b; }
+.jhk-banner .jhk-arrow.prev { left: 12px; }
+.jhk-banner .jhk-arrow.next { right: 12px; }
+.jhk-banner .jhk-arrow { opacity: .8; }
+.jhk-banner__links { position: absolute; bottom: 13%; left: 5%; display: flex; gap: 14px; width: 50%; opacity: 0; }
+.jhk-banner__links a { flex: 1; min-height: 52px; background: #087b40; color: #fff; display: grid; place-items: center; border-radius: 8px; }
+.jhk-banner__links:focus-within { opacity: 1; }
+.jhk-banner__mobile-gold { display: none; }
+/* 07｜科技影音區：控制影片卡片、16:9 縮圖、播放圖示與影片名稱。 */
+.jhk-video-area { background: #e9f2f4; }
+.jhk-video-area > .jhk-wrap { padding-top: 70px; }
+.jhk-video__card { border: 0; padding: 0; position: relative; border-radius: 18px; overflow: hidden; background: #fff; color: #fff; }
+.jhk-video__thumb, .jhk-news__thumb { position: relative; aspect-ratio: 16/9; background-size: cover; background-position: center; }
+.jhk-video__thumb .play, .jhk-news__thumb .play { position: absolute; inset: 0; margin: auto; width: 62px; height: 62px; border-radius: 50%; display: grid; place-items: center; padding-left: 4px; background: #fffffff2; color: #76847b; font-size: 26px; box-shadow: 0 2px 10px #0002; }
+.jhk-video__name { position: absolute; bottom: 0; inset-inline: 0; padding: 12px; font-size: 20px; line-height: 1.4; font-weight: 700; text-align: center; background: #0009; }
+/* 08｜專業團隊區：控制介紹文字、人物卡片網格及行動版輪播切換。 */
+.jhk-team-area { background: #fff; }
+.jhk-team-intro { margin: 28px auto 32px; text-align: center; color: #6f7974; letter-spacing: .08em; font-size: 20px; }
+.jhk-doctor__grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 38px 28px; }
+.jhk-doctor__card { display: block; aspect-ratio: 582/383; background-position: center; background-size: contain; background-repeat: no-repeat; }
+.jhk-team-area .jhk-arrow, .jhk-team-area .jhk-dots { display: none; }
+/* 09｜熱銷商品區：控制商品面板、圖片、品名、價格、購買按鈕與商品箭頭。 */
+.jhk-products-area { padding-top: 12px; background: #fff; }
+.jhk-products-panel { border-radius: 30px; background: #fff; border: 1px solid #edf0ee; padding: 0 42px 22px; box-shadow: 0 6px 30px #173e3210; }
+.jhk-gold-heading { width: fit-content; max-width: 100%; margin: 0 auto 42px; padding: 18px 56px; border-radius: 0 0 52px 52px; background: linear-gradient(90deg,#997717,#b89213,#997717); color: #fff; font-size: var(--h2); font-weight: 700; letter-spacing: .12em; text-align: center; text-shadow: 1px 2px #58421b; }
+.jhk-hot__card { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0,1.1fr); gap: 16px; padding: 24px 20px; border: 1px solid #c7cec9; border-radius: 18px; background: #fff; box-shadow: 2px 4px 3px #203c3429; align-items: center; }
+.jhk-hot__img { display: block; width: 100%; aspect-ratio: 1/1; background-position: center; background-size: contain; background-repeat: no-repeat; }
+.jhk-hot__info { min-width: 0; display: flex; flex-direction: column; gap: 12px; }
+.jhk-hot__info .name { font-size: 17px; line-height: 1.5; color: #172a22; overflow-wrap: anywhere; }
+.jhk-hot__info .price { font-size: 24px; color: #172a22; font-weight: 700; }
+.jhk-hot__actions { display: flex; flex-wrap: wrap; gap: 7px; }
+.jhk-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 8px 14px; border: 0; border-radius: 7px; font-size: 16px; font-weight: 600; text-align: center; line-height: 1.3; }
+.jhk-btn.green { background: #18724f; color: #fff; }
+.jhk-btn.gold { background: #e77700; color: #fff; }
+.jhk-hot__actions .jhk-btn { padding: 8px; flex: 1; white-space: nowrap; }
+.jhk-products-area .jhk-arrow { background: #a17c18; color: #fff; border: 0; }
+/* 10｜核心技術區：控制雙欄技術卡、背景遮罩、標題與說明文字。 */
+.jhk-tech-area { padding-top: 10px; background: linear-gradient(#fff,#d6e7e5); }
+.jhk-tech__row { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 36px; }
+.jhk-tech__card { min-width: 0; position: relative; padding: clamp(24px,3vw,50px); border-radius: 26px; overflow: hidden; color: #fff; background: #124d57; }
+.jhk-tech__card:nth-child(2) { background-image: none; }
+.jhk-tech__card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg,#003946b3,transparent); }
+.jhk-tech__card:nth-child(2)::before { background: linear-gradient(90deg,#84632699,transparent); }
+.jhk-tech__card h3, .jhk-tech__card p { position: relative; z-index: 1; max-width: 72%; }
+.jhk-tech__card h3 { margin: 0 0 22px; color: #fff; font-size: clamp(22px,2.2vw,36px); font-weight: 700; }
+.jhk-tech__card p { margin: 0; font-size: 17px; }
+/* 11｜國際證照區：控制深綠背景、證書圖片比例、名稱、箭頭與分頁。 */
+.jhk-cert { background: linear-gradient(110deg,#05352b,#09684d); color: #fff; }
+.jhk-cert .jhk-ribbon h2 { color: #fff48d; }
+.jhk-cert .jhk-ribbon strong { font-size: 1.9em; line-height: .8; color: #f7da76; font-style: italic; text-shadow: 2px 2px #79551d; }
+.jhk-cert .jhk-wrap { padding-top: 56px; }
+.jhk-cert__doc { display: flex; flex-direction: column; gap: 16px; text-align: center; }
+.jhk-cert__doc .img { width: 100%; aspect-ratio: 5/7; border-radius: 9px; background-color: #fff; background-position: center; background-size: contain; background-repeat: no-repeat; }
+.jhk-cert__doc .cap { font-size: 15px; line-height: 1.5; color: #e7f4ef; overflow-wrap: anywhere; }
+.jhk-cert .jhk-dots button::after { background: #ffffff80; }
+.jhk-cert .jhk-dots button[aria-current='true']::after { background: #fff; }
+.jhk-cert-more { text-align: center; margin: 20px 0 0; }
+.jhk-cert-more a { display: inline-block; color: #fff4b6; padding: 10px 16px; border-bottom: 1px solid #c7b764; }
+/* 12｜新聞媒體區：控制新聞卡片、YouTube 縮圖、標題、來源文字及閱讀連結。 */
+.jhk-news-area { background: #edf3f3; }
+.jhk-news-area > .jhk-wrap { padding-top: 45px; }
+.jhk-news__card { border: 1px solid #d5ddd8; border-radius: 18px; overflow: hidden; background: #fff; box-shadow: 2px 4px 4px #1d382a24; }
+.jhk-news__thumb { margin: 8px 8px 0; border-radius: 12px; overflow: hidden; }
+.jhk-news__body { padding: 18px 22px 24px; }
+.jhk-news__body .cap { font-size: 20px; font-weight: 700; }
+.jhk-news__body .desc { margin: 8px 0 0; color: #6a7970; font-size: 16px; }
+.jhk-news__more { display: inline-block; margin-top: 12px; text-decoration: underline !important; }
+/* 13｜聯絡按鈕區：控制電話、LINE、會員三張按鈕的尺寸、色彩與排列。 */
+.jhk-cta-area { background: #edf3f3; padding-top: 15px; }
+.jhk-cta__row { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 34px; }
+.jhk-cta__item { display: flex; align-items: center; justify-content: center; gap: 16px; padding: 22px 18px; border-radius: 12px; min-height: 118px; color: #fff !important; background: linear-gradient(#ff9700,#df5700 50%,#a90d00); box-shadow: inset 0 1px 1px #ffffffb0; }
+.jhk-cta__item:nth-child(2) { background: linear-gradient(#2dfa82,#0dbc35 55%,#08651a); }
+.jhk-cta__item:nth-child(3) { background: linear-gradient(#09c8f1,#079ddd 50%,#356897); }
+.jhk-cta__icon { display: grid; place-items: center; flex: 0 0 62px; width: 62px; height: 62px; border: 2px solid #fff; border-radius: 50%; }
+.jhk-cta__icon svg { width: 36px; height: 36px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+.jhk-cta__txt { text-align: center; font-size: clamp(18px,1.8vw,30px); font-weight: 700; line-height: 1.35; text-shadow: 1px 2px 3px #23453450; }
+.jhk-cta__txt small { display: block; font-size: .76em; }
+/* 14｜頁尾基本版：控制品牌、公司資料、社群圖示及版面排列。 */
+.jhk-footer { padding-block: 38px; background: #06372e; color: #d2e4df; }
+.jhk-footer__inner { display: flex; justify-content: space-between; gap: 40px; align-items: center; flex-wrap: wrap; }
+.jhk-footer__brand { width: 230px; }
+.jhk-footer__brand img { display: block; }
+.jhk-footer__brand small { display: block; margin-top: 12px; font-size: 13px; }
+.jhk-footer__info { font-size: 16px; line-height: 1.8; }
+.jhk-footer__info strong { display: block; color: #fff; font-size: 20px; margin-bottom: 8px; }
+.jhk-footer__info span { display: block; }
+.jhk-footer__social { display: flex; gap: 12px; }
+.jhk-footer__social a { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: #fff; color: #183a2e; font-weight: 700; font-size: 20px; }
+/* 15｜右側浮動工具：控制客服、LINE、會員按鈕的固定位置與外觀。 */
+.jhk-float { position: fixed; right: max(5px,env(safe-area-inset-right)); top: 50%; transform: translateY(-50%); z-index: 99990; display: flex; flex-direction: column; gap: 12px; padding: 14px 8px; border-radius: 44px; border: 2px solid #b89b43; background: #f5f6eafa; box-shadow: 0 3px 12px #00382026; }
+.jhk-float__btn { display: flex; align-items: center; flex-direction: column; gap: 3px; font-size: 12px; font-weight: 700; }
+.jhk-float__ico { width: 48px; height: 48px; display: grid; place-items: center; color: #fff; border-radius: 50%; background: linear-gradient(#ffac22,#e67a00); box-shadow: inset 0 0 0 2px #fff; }
+.jhk-float__ico.is-line { background: linear-gradient(#22e878,#08a532); font-size: 12px; }
+.jhk-float__ico.is-member { background: linear-gradient(#18d5ff,#168bc1); }
+.jhk-float__ico svg { width: 28px; height: 28px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+/* 16｜YouTube 播放視窗：控制遮罩、影片比例、關閉按鈕與最高層級。 */
+.jhk-modal { position: fixed; inset: 0; z-index: 2147483647; display: flex; justify-content: center; align-items: center; padding: 60px 20px; }
+.jhk-modal[hidden] { display: none; }
+.jhk-modal__backdrop { position: absolute; inset: 0; background: #00120deb; }
+.jhk-modal__box { position: relative; width: min(1000px,100%); background: #fff; border-radius: 14px; }
+.jhk-modal__close { position: absolute; right: 0; top: -50px; width: 44px; height: 44px; font-size: 28px; color: #193f34; background: #fff; border: 0; border-radius: 50%; }
+.jhk-modal__frame { aspect-ratio: 16/9; display: grid; place-items: center; text-align: center; }
+.jhk-modal__frame iframe { width: 100%; height: 100%; border: 0; }
+.jhk-modal__frame p { padding: 24px; margin: 0; }
+/* 17｜基本版 Tablet（769–1199px）：縮小導覽與卡片間距，團隊改為兩欄。 */
+@media (min-width:769px) and (max-width:1199px) {
+ .jhk-home { --safe: 1040px; --gutter: 112px; --h2: 28px; --header-h: 96px; }
+ .is-jhk-design #jhkg-master-nav#jhkg-master-nav { height: 96px; padding-inline: 20px; }
+ .is-jhk-design #jhkg-master-nav .jhkg-nav-logo img { width: 140px; }
+ .is-jhk-design #jhkg-master-nav .jhkg-menu-item { font-size: 14px; }
+ .jhk-doctor__grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+ .jhk-tech__row { gap: 20px; }
+ .jhk-tech__card h3, .jhk-tech__card p { max-width: 100%; }
+ .jhk-cta__row { gap: 16px; }
+ .jhk-cta__item { gap: 8px; flex-direction: column; padding: 18px 10px; }
+ .jhk-cta__icon { flex-basis: 48px; width: 48px; height: 48px; }
+ .jhk-products-panel { padding-inline: 24px; }
+}
+/* 18｜基本版 Mobile（≤768px）：單欄內容、手機導覽、觸控輪播與浮動工具縮放。 */
+@media (max-width:768px) {
+ html.is-jhk-design { scroll-padding-top: 85px; }
+ .jhk-home { --safe: 600px; --gutter: 40px; --card-gap: 18px; --header-h: 75px; --text: 17px; --h2: 26px; }
+ .is-jhk-design #jhkg-master-nav#jhkg-master-nav { height: 75px; padding-inline: 18px; }
+ .is-jhk-design #jhkg-master-nav .jhkg-nav-logo img { width: 150px; max-height: 44px; }
+ .is-jhk-design #jhkg-menu-list { top: 75px; max-height: calc(100dvh - 75px); overflow-y: auto; background: #fff; }
+ .jhk-section { padding-block: 32px; }
+ .jhk-section--ribbon { padding-top: 0; }
+ .jhk-ribbon h2 { min-width: 0; max-width: 100%; width: 100%; padding: 18px 20px; font-size: var(--h2); letter-spacing: .03em; }
+ .jhk-ribbon--round h2 { border-radius: 0 0 40px 40px; margin-bottom: -14px; padding: 20px 12px; font-size: 24px; }
+ .jhk-title-sub { display: none; }
+ .jhk-banner picture img { aspect-ratio: 390/405; object-fit: contain; }
+ .jhk-banner__links { left: 2%; bottom: 3%; width: 96%; gap: 10px; }
+ .jhk-banner__links a { min-height: 40px; }
+ .jhk-banner__gold picture { display: none; }
+ .jhk-banner__mobile-gold { position: relative; display: flex; flex-direction: column; min-height: 100%; aspect-ratio: 390/405; padding: 25px 22px 60px; overflow: hidden; background: radial-gradient(ellipse at 10% 10%,#fff,#fff0 65%),linear-gradient(125deg,#fff6de,#edd198); }
+ .jhk-banner__mobile-gold .brand { width: 135px; }
+ .jhk-banner__mobile-gold h2 { position: relative; z-index: 1; color: #922618; font-size: 31px; line-height: 1.35; margin: 24px 0 10px; }
+ .jhk-banner__mobile-gold h2 strong { font-size: 44px; }
+ .jhk-banner__mobile-gold p { position: relative; z-index: 1; max-width: 48%; font-size: 16px; color: #715126; }
+ .jhk-banner__mobile-gold .doctor { position: absolute; right: -12%; bottom: 18px; width: 70%; }
+ .jhk-banner__gold .jhk-banner__links { opacity: 1; bottom: 17px; }
+ .jhk-banner__gold .jhk-banner__links a:first-child { background: #d56b00; }
+ .jhk-banner .jhk-arrow { display: none; }
+ .jhk-banner .jhk-dots { bottom: 0; }
+ .jhk-video-area > .jhk-wrap { padding-top: 50px; }
+ .jhk-video__name { font-size: 18px; padding: 9px 10px; }
+ .jhk-video__thumb .play, .jhk-news__thumb .play { width: 54px; height: 54px; font-size: 23px; }
+ .jhk-arrow { width: 40px; height: 44px; font-size: 31px !important; }
+ .jhk-arrow.prev { left: -15px; }
+ .jhk-arrow.next { right: -15px; }
+ .jhk-team-intro { font-size: 17px; margin: 24px auto; }
+ .jhk-doctor__grid { display: flex; gap: var(--card-gap); overflow-x: auto; scroll-snap-type: x mandatory; }
+ .jhk-doctor__card { flex: 0 0 100%; scroll-snap-align: start; }
+ .jhk-team-area .jhk-arrow, .jhk-team-area .jhk-dots { display: flex; }
+ .jhk-products-panel { padding: 0 15px 14px; border: 0; border-radius: 0; box-shadow: none; width: calc(100% - 10px); }
+ .jhk-gold-heading { margin-bottom: 30px; padding: 16px 22px; border-radius: 0 0 38px 38px; font-size: 26px; letter-spacing: .08em; }
+ .jhk-hot__card { grid-template-columns: minmax(0,.78fr) minmax(0,1.22fr); gap: 12px; padding: 20px 14px; }
+ .jhk-hot__info { gap: 10px; }
+ .jhk-hot__info .name { font-size: 16px; }
+ .jhk-hot__info .price { font-size: 23px; }
+ .jhk-hot__actions { gap: 6px; }
+ .jhk-hot__actions .jhk-btn { font-size: 15px; min-height: 46px; padding: 9px 6px; }
+ .jhk-tech__row { grid-template-columns: 1fr; gap: 18px; }
+ .jhk-tech-area { padding-top: 0; }
+ .jhk-tech__card { padding: 26px 22px; border-radius: 22px; }
+ .jhk-tech__card h3 { font-size: 24px; max-width: 90%; margin-bottom: 18px; }
+ .jhk-tech__card p { font-size: 16px; max-width: 85%; }
+ .jhk-cert .jhk-wrap { padding-top: 32px; }
+ .jhk-cert .jhk-ribbon h2 { line-height: 1.7; padding: 12px 12px; }
+ .jhk-cert .jhk-ribbon strong { font-size: 58px; }
+ .jhk-cert .jhk-title-sub { display: block; }
+ .jhk-cert #jhkCertTrack { gap: 12px; }
+ .jhk-cert__doc { gap: 10px; }
+ .jhk-cert__doc .cap { font-size: 12px; }
+ .jhk-cert__doc .img { border-radius: 5px; }
+ .jhk-cert-more { font-size: 16px; }
+ .jhk-news-area > .jhk-wrap { padding-top: 32px; }
+ .jhk-news__body { padding: 16px; }
+ .jhk-news__body .cap { font-size: 18px; }
+ .jhk-news__body .desc { font-size: 16px; }
+ .jhk-cta-area { padding-top: 0; }
+ .jhk-cta__row { grid-template-columns: 1fr; gap: 18px; }
+ .jhk-cta__item { min-height: 104px; padding: 20px; justify-content: flex-start; gap: 16px; }
+ .jhk-cta__txt { flex: 1; font-size: 25px; }
+ .jhk-cta__icon { flex-basis: 56px; width: 56px; height: 56px; }
+ .jhk-footer { padding: 36px 0; }
+ .jhk-footer__inner { flex-direction: column; align-items: flex-start; gap: 25px; }
+ .jhk-footer__brand { width: 185px; }
+ .jhk-footer__info { font-size: 16px; overflow-wrap: anywhere; }
+ .jhk-footer__info strong { font-size: 19px; }
+ .jhk-footer__social { gap: 15px; }
+ .jhk-footer__social a { width: 48px; height: 48px; }
+ .jhk-float { right: max(3px,env(safe-area-inset-right)); gap: 6px; padding: 7px 3px; border-width: 1px; }
+ .jhk-float__ico { width: 44px; height: 44px; }
+ .jhk-float__label { font-size: 11px; }
+ .jhk-float__ico svg { width: 24px; height: 24px; }
+}
+/* 19｜無障礙動態偏好：使用者要求減少動態時關閉平滑捲動。 */
+@media (prefers-reduced-motion: reduce) { html.is-jhk-design { scroll-behavior: auto; } }
+
+
+/* 20｜精準設計稿覆寫：以下規則依 1920px 桌機／390px 手機原稿比例校正。 */
+/* 精準還原：原稿元件素材＋響應式結構，沒有使用整頁圖片替代網頁。 */
+.is-jhk-exact #jhkg-master-nav#jhkg-master-nav { display:none !important; }
+.jhk-exact { --u:calc(min(100vw,1920px)/1920); --gutter:calc(var(--u)*192); --safe:1728px; --header-h:calc(var(--u)*110); --card-gap:calc(var(--u)*24); max-width:1920px; margin-inline:auto; background:#e5e5e5; font-family:Arial,'Microsoft JhengHei',sans-serif; }
+.jhk-exact a,.jhk-exact button,.jhk-exact p,.jhk-exact input,.jhk-exact .jhk-hot__info .price { font-family:Arial,'Microsoft JhengHei',sans-serif; }
+.exact-sr { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important; }
+/* 21｜精準導覽列：以原稿圖片為底，透明連結區對應各選單與服務按鈕。 */
+.exact-nav { position:fixed; top:0; left:50%; transform:translateX(-50%); z-index:100000; width:min(100%,1920px); background:#efefef; }
+.exact-nav picture,.exact-nav picture img { display:block; width:100%; height:auto; }
+.exact-desktop-nav,.exact-mobile-nav { position:absolute; inset:0; }
+.exact-nav [role='navigation']>a,.exact-nav [role='navigation']>button { position:absolute; height:70%; top:15%; border:0; background:transparent; padding:0; }
+.exact-nav .nav-logo { left:3%; width:12%; }
+.exact-nav .nav-home { left:19.8%; width:4%; }
+.exact-nav .nav-about { left:25.4%; width:7.4%; }
+.exact-nav .nav-team { left:34.3%; width:7.4%; }
+.exact-nav .nav-products { left:42.1%; width:7.4%; }
+.exact-nav .nav-health { left:50.1%; width:7.4%; }
+.exact-nav .nav-contact { left:58%; width:7.4%; }
+.exact-nav .nav-phone { left:68.6%; width:14.5%; }
+.exact-nav .nav-line { left:83.3%; width:12.5%; }
+.exact-mobile-nav { display:none; }
+.exact-drawer { position:absolute; inset:100% 0 auto; padding:10px 18px; background:#fff; box-shadow:0 5px 14px #002e2822; max-height:calc(100dvh - 75px); overflow:auto; }
+.exact-drawer[hidden] { display:none; }
+.exact-nav .exact-drawer>a { position:static; display:block; padding:14px 12px; color:#174a38; font-size:18px; border-bottom:1px solid #e3e9e4; }
+/* 22｜精準區塊標題：各區標題圖維持滿版寬度，文字標題保留給輔助工具。 */
+.exact-heading,.exact-heading picture,.exact-heading img { display:block; width:100%; }
+/* 23｜精準共用輪播：重新定義區塊留白、箭頭、圓點與比例單位 --u。 */
+.jhk-exact .jhk-section { padding:0; }
+.jhk-exact .jhk-track { padding:0; }
+.jhk-exact .jhk-dots { margin:calc(var(--u)*24) 0 0; gap:calc(var(--u)*10); }
+.jhk-exact .jhk-dots button { width:calc(var(--u)*30); height:calc(var(--u)*44); }
+.jhk-exact .jhk-dots button::after { width:calc(var(--u)*18); height:calc(var(--u)*18); background:#b9b9b9; }
+.jhk-exact .jhk-dots button[aria-current='true']::after { width:calc(var(--u)*18); height:calc(var(--u)*18); background:#929e97; }
+.jhk-exact .jhk-arrow { width:calc(var(--u)*50); height:calc(var(--u)*50); font-size:calc(var(--u)*55)!important; line-height:1; padding-bottom:calc(var(--u)*7); border-color:#b0b0b0; box-shadow:none; background:#fff; color:#989898; }
+.jhk-exact .jhk-arrow.prev { left:calc(var(--u)*-28); }
+.jhk-exact .jhk-arrow.next { right:calc(var(--u)*-28); }
+.jhk-exact .jhk-banner .jhk-arrow,.jhk-exact .jhk-banner .jhk-dots { display:none; }
+.jhk-exact .jhk-banner__links { bottom:12%; }
+/* 24｜精準主視覺：依原稿比例顯示 Banner，隱藏主視覺箭頭與圓點。 */
+.jhk-exact .jhk-banner picture img { aspect-ratio:1920/825; }
+/* 25｜精準科技影音：控制三張影片的寬度、間距、圓角、文字及箭頭中心。 */
+.jhk-exact .jhk-video-area { background:#eff3f4; padding-bottom:calc(var(--u)*23); }
+.jhk-exact .jhk-video-area>.jhk-wrap { width:calc(100% - var(--u)*190); padding-top:calc(var(--u)*51); }
+.jhk-exact #jhkVideoTrack { gap:calc(var(--u)*60); }
+.jhk-exact .jhk-video__card { border-radius:calc(var(--u)*30); }
+.jhk-exact .jhk-video__name { padding:calc(var(--u)*16) calc(var(--u)*12); font-size:calc(var(--u)*30); line-height:1.4; font-weight:500; background:#000a; }
+.jhk-exact .jhk-video__thumb .play,.jhk-exact .jhk-news__thumb .play { width:calc(var(--u)*70); height:calc(var(--u)*70); font-size:calc(var(--u)*36); background:white; box-shadow:none; color:#a0a0a0; }
+.jhk-exact .jhk-video-area .jhk-arrow { top:calc(var(--u)*150); }
+/* 26｜精準專業團隊：控制人物卡片間距、桌機背景與區塊底部留白。 */
+.jhk-exact .jhk-team-area { background:#e5e5e5; padding-bottom:calc(var(--u)*132); }
+.jhk-exact .jhk-doctor__grid { gap:calc(var(--u)*96) calc(var(--u)*24); }
+.jhk-exact .jhk-doctor__card { border:0; box-shadow:none; border-radius:0; }
+/* 27｜精準熱銷商品：控制白色面板、商品雙欄資訊、按鈕及金色箭頭。 */
+.jhk-exact .jhk-products-area { background:#e5e5e5; padding-top:calc(var(--u)*41); padding-bottom:calc(var(--u)*58); }
+.jhk-exact .jhk-products-panel { width:calc(100% - var(--u)*100); border:0; box-shadow:none; border-radius:calc(var(--u)*54); padding:0 calc(var(--u)*42) calc(var(--u)*28); }
+.exact-product-heading { display:block; width:56.22%; margin:0 auto calc(var(--u)*77); }
+.exact-product-heading img { display:block; width:100%; }
+.jhk-exact #jhkHotTrack { gap:calc(var(--u)*32); padding-bottom:calc(var(--u)*12); }
+.jhk-exact .jhk-hot__card { grid-template-columns:minmax(0,44%) minmax(0,56%); gap:0; padding:calc(var(--u)*38) calc(var(--u)*30); min-height:calc(var(--u)*365); border:1px solid #bdbdbd; border-radius:calc(var(--u)*26); box-shadow:calc(var(--u)*5) calc(var(--u)*8) calc(var(--u)*5) #0004; }
+.jhk-exact .jhk-hot__img { width:100%; aspect-ratio:553/535; }
+.jhk-exact .jhk-hot__info { gap:calc(var(--u)*16); }
+.jhk-exact .jhk-hot__info .name { font-size:calc(var(--u)*24); line-height:1.25; color:#111; }
+.jhk-exact .jhk-hot__info .price { font-size:calc(var(--u)*26); font-weight:400; text-align:right; color:#111; padding-right:calc(var(--u)*4); }
+.jhk-exact .jhk-hot__actions { margin-top:calc(var(--u)*22); gap:calc(var(--u)*10); flex-wrap:nowrap; }
+.jhk-exact .jhk-hot__actions .jhk-btn { min-width:0; min-height:calc(var(--u)*48); padding:calc(var(--u)*8) calc(var(--u)*7); font-size:calc(var(--u)*22); font-weight:400; border-radius:calc(var(--u)*11); }
+.jhk-exact .jhk-btn.green { background:#1e7155; }
+.jhk-exact .jhk-btn.gold { background:#e96500; }
+.jhk-exact .jhk-products-area .jhk-arrow { background:#a3801b; color:#fff; top:calc(var(--u)*176); }
+.jhk-exact .jhk-products-area .jhk-dots { margin-top:calc(var(--u)*26); }
+/* 28｜精準核心技術：使用原稿圖片卡，控制雙欄寬度與區塊上下間距。 */
+.jhk-exact .jhk-tech-area { padding:calc(var(--u)*31) 0 calc(var(--u)*60); background:#e5e5e5; }
+.jhk-exact .jhk-tech__row { width:calc(100% - var(--u)*118); margin-left:calc(var(--u)*67); gap:calc(var(--u)*50); }
+.jhk-exact .jhk-tech__card { padding:0; border:0; border-radius:0; background:none; box-shadow:none; }
+.jhk-exact .jhk-tech__card::before { display:none; }
+.jhk-exact .jhk-tech__card picture,.jhk-exact .jhk-tech__card img { display:block; width:100%; }
+/* 29｜精準國際證照：控制每頁數量、證書比例、文字、深綠背景及分頁位置。 */
+.jhk-exact .jhk-cert { background:linear-gradient(105deg,#06342b,#0b644f); padding-bottom:calc(var(--u)*42); }
+.jhk-exact .jhk-cert>.jhk-wrap { width:calc(100% - var(--u)*360); padding-top:calc(var(--u)*150); }
+.jhk-exact #jhkCertTrack { gap:calc(var(--u)*46); }
+.jhk-exact .jhk-cert__doc { gap:calc(var(--u)*20); }
+.jhk-exact .jhk-cert__doc .img { aspect-ratio:224/311; border-radius:calc(var(--u)*14); background-size:cover; }
+.jhk-exact .jhk-cert__doc .cap { font-size:calc(var(--u)*24); line-height:1.3; color:#dfebe7; }
+.jhk-exact .jhk-cert .jhk-arrow { top:calc(var(--u)*165); }
+.jhk-exact .jhk-cert .jhk-arrow.prev { left:calc(var(--u)*-92); }
+.jhk-exact .jhk-cert .jhk-arrow.next { right:calc(var(--u)*-92); }
+.jhk-exact .jhk-cert .jhk-dots { margin-top:calc(var(--u)*68); }
+.jhk-exact .jhk-cert-more { display:none; }
+/* 30｜精準新聞媒體：控制三張新聞卡片、縮圖、內文、箭頭與分頁位置。 */
+.jhk-exact .jhk-news-area { background:#eff3f4; padding-bottom:calc(var(--u)*10); }
+.jhk-exact .jhk-news-area>.jhk-wrap { width:calc(100% - var(--u)*300); padding-top:calc(var(--u)*17); }
+.jhk-exact #jhkNewsTrack { gap:calc(var(--u)*32); padding-bottom:calc(var(--u)*10); }
+.jhk-exact .jhk-news__card { border:0; border-radius:calc(var(--u)*34); box-shadow:calc(var(--u)*6) calc(var(--u)*8) calc(var(--u)*5) #0004; }
+.jhk-exact .jhk-news__thumb { margin:calc(var(--u)*10) calc(var(--u)*10) 0; width:calc(100% - var(--u)*20)!important; border-radius:calc(var(--u)*25); }
+.jhk-exact .jhk-news__body { padding:calc(var(--u)*31) calc(var(--u)*31) calc(var(--u)*38); }
+.jhk-exact .jhk-news__body .cap { font-size:calc(var(--u)*22); font-weight:700; line-height:1.4; }
+.jhk-exact .jhk-news__body .desc { font-size:calc(var(--u)*17); color:#929e98; margin-top:calc(var(--u)*12); }
+.jhk-exact .jhk-news-area .jhk-arrow { top:calc(var(--u)*214); }
+.jhk-exact .jhk-news-area .jhk-arrow.prev { left:calc(var(--u)*-83); }
+.jhk-exact .jhk-news-area .jhk-arrow.next { right:calc(var(--u)*-83); }
+.jhk-exact .jhk-news-area .jhk-dots { margin-top:calc(var(--u)*20); }
+/* 31｜精準聯絡按鈕：寬度由 JavaScript 同步影片卡片，圖片保持原始比例。 */
+.jhk-exact .jhk-cta-area { background:#eff3f4; padding:calc(var(--u)*10) 0 calc(var(--u)*80); }
+.jhk-exact .jhk-cta__row { width:calc(100% - var(--u)*192); gap:calc(var(--u)*60); }
+.jhk-exact .jhk-cta__item { display:block; padding:0; min-height:0; border-radius:0; background:none; box-shadow:none; }
+.jhk-exact .jhk-cta__item img { display:block; width:100%; }
+/* 32｜精準頁尾初始尺寸：依原稿比例調整品牌、公司資訊與社群圖示。 */
+.jhk-exact .jhk-footer { padding:calc(var(--u)*44) 0; background:#06372e; }
+.jhk-exact .jhk-footer__inner { gap:calc(var(--u)*30); flex-wrap:nowrap; }
+.jhk-exact .jhk-footer__info { font-size:calc(var(--u)*18); line-height:1.45; }
+.jhk-exact .jhk-footer__info strong { font-size:calc(var(--u)*23); margin-bottom:calc(var(--u)*10); }
+.jhk-exact .jhk-footer__brand { width:calc(var(--u)*280); }
+.jhk-exact .jhk-footer__brand small { font-size:calc(var(--u)*14); }
+.jhk-exact .jhk-footer__social { gap:calc(var(--u)*14); }
+.jhk-exact .jhk-footer__social a { width:calc(var(--u)*52); height:calc(var(--u)*52); font-size:calc(var(--u)*25); }
+.jhk-exact .exact-float { width:clamp(66px,5.1vw,98px); display:block; padding:0; gap:0; border:0; border-radius:0; background:none; box-shadow:none; right:8px; }
+.exact-float>img { display:block; width:100%; }
+.jhk-exact .exact-float-link { position:absolute; left:5%; width:90%; height:32%; top:2%; border-radius:40%; }
+.jhk-exact .exact-float-link:nth-of-type(2) { top:34%; }
+.jhk-exact .exact-float-link:nth-of-type(3) { top:66%; }
+/* 33｜精準 Tablet（769–1199px）：依較窄桌機寬度重新計算 --u 與各區尺寸。 */
+@media (min-width:769px) and (max-width:1199px) {
+ .jhk-exact .jhk-hot__info .name { font-size:16px; }
+ .jhk-exact .jhk-hot__info .price { font-size:20px; }
+ .jhk-exact .jhk-hot__actions .jhk-btn { font-size:15px; min-height:40px; }
+ .jhk-exact .jhk-cert__doc .cap { font-size:14px; }
+ .jhk-exact .jhk-news__body .cap { font-size:16px; }
+ .jhk-exact .jhk-news__body .desc { font-size:13px; }
+ .jhk-exact .jhk-footer__info { font-size:14px; }
+ .jhk-exact .jhk-footer__info strong { font-size:17px; }
+}
+/* 34｜精準 Mobile（≤768px）：依 390px 原稿重排導覽、卡片、證照、新聞與 CTA。 */
+@media (max-width:768px) {
+ .jhk-exact { --u:calc(min(100vw,520px)/390); --header-h:calc(100vw*75/390); --gutter:calc(var(--u)*56); --card-gap:calc(var(--u)*18); }
+ .exact-nav { width:100%; }
+ .exact-desktop-nav { display:none; }
+ .exact-mobile-nav { display:block; }
+ .exact-mobile-nav .nav-menu { left:2%; width:12%; }
+ .exact-mobile-nav .nav-logo { left:24%; width:42%; }
+ .exact-mobile-nav .nav-member { left:76%; width:11%; }
+ .exact-mobile-nav .nav-cart { left:88%; width:11%; }
+ .exact-nav [role='navigation']>a,.exact-nav [role='navigation']>button { top:10%; height:80%; }
+ .jhk-exact .jhk-banner picture img { aspect-ratio:390/405; }
+ .jhk-exact .jhk-banner__links { bottom:3%; }
+ .jhk-exact .jhk-dots { margin-top:calc(var(--u)*10); gap:calc(var(--u)*3); }
+ .jhk-exact .jhk-dots button { width:calc(var(--u)*11); height:calc(var(--u)*28); min-width:11px; }
+ .jhk-exact .jhk-dots button::after,.jhk-exact .jhk-dots button[aria-current='true']::after { width:calc(var(--u)*6); height:calc(var(--u)*6); }
+ .jhk-exact .jhk-arrow { width:calc(var(--u)*26); height:calc(var(--u)*26); font-size:calc(var(--u)*32)!important; padding-bottom:calc(var(--u)*4); }
+ .jhk-exact .jhk-arrow.prev { left:calc(var(--u)*-14); }
+ .jhk-exact .jhk-arrow.next { right:calc(var(--u)*-14); }
+ .jhk-exact .jhk-video-area { background:#efefef; padding-bottom:calc(var(--u)*7); }
+ .jhk-exact .jhk-video-area>.jhk-wrap { width:calc(100% - var(--u)*56); padding-top:calc(var(--u)*29); }
+ .jhk-exact .jhk-video__card { border-radius:calc(var(--u)*15); }
+ .jhk-exact .jhk-video__name { font-size:calc(var(--u)*18); padding:calc(var(--u)*10) calc(var(--u)*5); }
+ .jhk-exact .jhk-video__thumb .play,.jhk-exact .jhk-news__thumb .play { width:calc(var(--u)*45); height:calc(var(--u)*45); font-size:calc(var(--u)*26); }
+ .jhk-exact .jhk-video-area .jhk-arrow { top:calc(var(--u)*104); }
+ .jhk-exact .jhk-team-area { padding-bottom:calc(var(--u)*18); }
+ .jhk-exact .jhk-team-area>.jhk-wrap { width:calc(100% - var(--u)*50); }
+ .jhk-exact .jhk-doctor__grid { gap:calc(var(--u)*18); }
+ .jhk-exact .jhk-team-area .jhk-arrow { display:none; }
+ .jhk-exact .jhk-team-area .jhk-dots { margin-top:calc(var(--u)*20); }
+ .jhk-exact .jhk-products-area { padding:0 0 calc(var(--u)*5); }
+ .jhk-exact .jhk-products-panel { width:100%; background:transparent; padding:0; border-radius:0; }
+ .exact-product-heading { width:calc(100% - var(--u)*10); margin:0 auto calc(var(--u)*23); }
+ .jhk-exact .jhk-products-panel>.jhk-carousel { width:calc(var(--u)*306); max-width:calc(100% - 60px); margin:auto; }
+ .jhk-exact #jhkHotTrack { gap:calc(var(--u)*18); padding-bottom:calc(var(--u)*10); }
+ .jhk-exact .jhk-hot__card { min-height:calc(var(--u)*200); padding:calc(var(--u)*22) calc(var(--u)*17); border-radius:calc(var(--u)*14); grid-template-columns:minmax(0,43%) minmax(0,57%); }
+ .jhk-exact .jhk-hot__info { gap:calc(var(--u)*8); }
+ .jhk-exact .jhk-hot__info .name { font-size:calc(var(--u)*14); line-height:1.23; }
+ .jhk-exact .jhk-hot__info .price { font-size:calc(var(--u)*17); padding-right:0; }
+ .jhk-exact .jhk-hot__actions { margin-top:calc(var(--u)*12); gap:calc(var(--u)*5); }
+ .jhk-exact .jhk-hot__actions .jhk-btn { min-height:calc(var(--u)*26); padding:calc(var(--u)*5) calc(var(--u)*4); font-size:calc(var(--u)*12); border-radius:calc(var(--u)*6); }
+ .jhk-exact .jhk-products-area .jhk-arrow { top:calc(var(--u)*92); }
+ .jhk-exact .jhk-products-area .jhk-arrow.prev { left:calc(var(--u)*-28); }
+ .jhk-exact .jhk-products-area .jhk-arrow.next { right:calc(var(--u)*-28); }
+ .jhk-exact .jhk-products-area .jhk-dots { margin-top:calc(var(--u)*10); }
+ .jhk-exact .jhk-tech-area { padding:calc(var(--u)*32) 0 calc(var(--u)*27); }
+ .jhk-exact .jhk-tech__row { width:calc(100% - var(--u)*56); margin:auto; gap:calc(var(--u)*13); }
+ .jhk-exact .jhk-cert { padding-bottom:calc(var(--u)*7); }
+ .jhk-exact .jhk-cert>.jhk-wrap { width:calc(100% - var(--u)*106); padding-top:calc(var(--u)*53); }
+ .jhk-exact #jhkCertTrack { gap:calc(var(--u)*17); }
+ .jhk-exact .jhk-cert__doc { gap:calc(var(--u)*8); }
+ .jhk-exact .jhk-cert__doc .img { border-radius:calc(var(--u)*5); }
+ .jhk-exact .jhk-cert__doc .cap { font-size:calc(var(--u)*10); line-height:1.3; }
+ .jhk-exact .jhk-cert .jhk-arrow { width:calc(var(--u)*19); height:calc(var(--u)*19); font-size:calc(var(--u)*25)!important; top:calc(var(--u)*62); }
+ .jhk-exact .jhk-cert .jhk-arrow.prev { left:calc(var(--u)*-26); }
+ .jhk-exact .jhk-cert .jhk-arrow.next { right:calc(var(--u)*-26); }
+ .jhk-exact .jhk-cert .jhk-dots { margin-top:calc(var(--u)*23); }
+ .jhk-exact .jhk-cert .jhk-dots button::after { background:#fff; }
+ .jhk-exact .jhk-news-area { background:#e5e5e5; padding-bottom:0; }
+ .jhk-exact .jhk-news-area>.jhk-wrap { width:calc(var(--u)*314); max-width:calc(100% - 50px); padding-top:calc(var(--u)*47); }
+ .jhk-exact #jhkNewsTrack { gap:calc(var(--u)*18); padding-bottom:calc(var(--u)*7); }
+ .jhk-exact #jhkNewsTrack>.jhk-news__card:last-child { order:-1; }
+ .jhk-exact .jhk-news__card { border-radius:calc(var(--u)*18); }
+ .jhk-exact .jhk-news__thumb { margin:calc(var(--u)*5) calc(var(--u)*5) 0; width:calc(100% - var(--u)*10)!important; border-radius:calc(var(--u)*15); }
+ .jhk-exact .jhk-news__body { padding:calc(var(--u)*20) calc(var(--u)*18) calc(var(--u)*24); }
+ .jhk-exact .jhk-news__body .cap { font-size:calc(var(--u)*14); }
+ .jhk-exact .jhk-news__body .desc { font-size:calc(var(--u)*10); margin-top:calc(var(--u)*8); }
+ .jhk-exact .jhk-news-area .jhk-arrow { top:calc(var(--u)*127); }
+ .jhk-exact .jhk-news-area .jhk-arrow.prev { left:calc(var(--u)*-15); }
+ .jhk-exact .jhk-news-area .jhk-arrow.next { right:calc(var(--u)*-15); }
+ .jhk-exact .jhk-news-area .jhk-dots { margin-top:calc(var(--u)*8); }
+ .jhk-exact .jhk-cta-area { background:#e5e5e5; padding:calc(var(--u)*20) 0 calc(var(--u)*36); }
+ .jhk-exact .jhk-cta__row { width:calc(100% - var(--u)*64); gap:calc(var(--u)*18); }
+ .jhk-exact .jhk-footer { padding:calc(var(--u)*40) 0; }
+ .jhk-exact .jhk-footer__inner { width:calc(100% - var(--u)*44); gap:calc(var(--u)*26); align-items:flex-start; }
+ .jhk-exact .jhk-footer__brand { display:none; }
+ .jhk-exact .jhk-footer__info { font-size:calc(var(--u)*14); line-height:1.35; }
+ .jhk-exact .jhk-footer__info strong { font-size:calc(var(--u)*18); margin-bottom:calc(var(--u)*16); }
+ .jhk-exact .jhk-footer__social { gap:calc(var(--u)*15); }
+ .jhk-exact .jhk-footer__social a { width:calc(var(--u)*48); height:calc(var(--u)*48); font-size:calc(var(--u)*22); }
+ .jhk-exact .exact-float { width:50px; right:4px; }
+}
+
+
+/* 35｜正式頁尾補強：以已確認公司資料為準，分別處理桌機、平板與手機排列。 */
+/* 頁尾依桌機／手機設計稿補齊；公司內容採用已確認的資料。 */
+.jhk-exact .jhk-footer { background:#052e27; padding:clamp(24px,2.6vw,50px) 0 clamp(14px,.95vw,18px); }
+.jhk-exact .jhk-footer,.jhk-exact .jhk-footer * { font-family:Arial,'Microsoft JhengHei',sans-serif; }
+.jhk-exact .jhk-footer__inner { width:calc(100% - clamp(48px,8vw,154px)); display:grid; grid-template-columns:clamp(190px,21vw,400px) minmax(0,1fr) auto; column-gap:clamp(24px,2.5vw,48px); row-gap:0; align-items:center; }
+.jhk-exact .jhk-footer__brand { display:block; width:100%; padding-right:clamp(24px,2.4vw,46px); border-right:2px solid #a58a2a; }
+.jhk-exact .jhk-footer__brand a { display:block; }
+.jhk-exact .jhk-footer__brand img { display:block; width:100%; height:auto; }
+.jhk-exact .jhk-footer__brand .jhk-footer__tagline { display:block; margin-top:clamp(12px,1vw,20px); color:#fff; text-align:center; font-size:clamp(16px,1.8vw,34px); font-weight:400; letter-spacing:.3em; white-space:nowrap; }
+.jhk-exact .jhk-footer__info { min-width:0; font-size:clamp(12px,1vw,19px); line-height:1.4; color:#b7cec5; }
+.jhk-exact .jhk-footer__info strong { font-family:Arial,'Microsoft JhengHei',sans-serif; font-size:clamp(15px,1.3vw,25px); font-weight:700; margin:0 0 clamp(10px,1vw,19px); line-height:1.35; }
+.jhk-exact .jhk-footer__info span { display:block; }
+.jhk-exact .jhk-footer__info a { color:inherit; text-decoration:none; }
+.jhk-exact .jhk-footer__social { display:flex; align-items:center; gap:clamp(10px,1.35vw,26px); }
+.jhk-exact .jhk-footer__social :is(a,button) { width:clamp(44px,4.15vw,80px); height:clamp(44px,4.15vw,80px); flex:0 0 auto; display:block; border:0; padding:0; border-radius:50%; background:#fff; color:#1d1917; overflow:visible; }
+.jhk-exact .jhk-footer__social img { display:block; width:100%; height:100%; object-fit:cover; border-radius:50%; }
+.jhk-exact .jhk-footer__copyright { display:block; grid-column:1/-1; margin:0; color:#8aa39a; font:clamp(11px,.9vw,17px)/1.4 Arial,'Microsoft JhengHei',sans-serif; text-align:right; }
+@media(max-width:1100px) and (min-width:769px) {
+ .jhk-exact .jhk-footer__inner { grid-template-columns:170px minmax(0,1fr) auto; gap:20px; }
+ .jhk-exact .jhk-footer__social { gap:8px; }
+ .jhk-exact .jhk-footer__brand { padding-right:20px; }
+ .jhk-exact .jhk-footer__brand .jhk-footer__tagline { font-size:15px; letter-spacing:.2em; }
+}
+@media(max-width:768px) {
+ .jhk-exact .jhk-footer { padding:38px 0 34px; }
+ .jhk-exact .jhk-footer__inner { display:flex; flex-direction:column; width:calc(100% - 58px); max-width:520px; margin:auto; gap:42px; align-items:stretch; }
+ .jhk-exact .jhk-footer__brand { display:none; }
+ .jhk-exact .jhk-footer__info { font-size:clamp(13px,4.1vw,20px); line-height:1.3; overflow-wrap:normal; }
+ .jhk-exact .jhk-footer__info strong { font-size:clamp(17px,4.62vw,23px); margin-bottom:16px; }
+ .jhk-exact .jhk-footer__social { display:flex; width:100%; justify-content:space-between; gap:12px; padding:0 10px; }
+ .jhk-exact .jhk-footer__social :is(a,button) { width:clamp(52px,16.4vw,72px); height:clamp(52px,16.4vw,72px); }
+ .jhk-exact .jhk-footer__copyright { display:none; }
+}
+/* 36｜共用互動回饋：連結與按鈕以縮放表示 hover、focus、active，不增加額外裝飾。 */
+/* 所有按鈕只用縮放回饋，不新增外框、陰影或底色。 */
+.jhk-exact :is(a[href],button,[role='button']) { --jhk-action-scale:1; cursor:pointer; -webkit-tap-highlight-color:transparent; scale:var(--jhk-action-scale); transition:scale .16s ease; }
+.jhk-exact :is(a[href],button,[role='button']):is(:hover,:active,:focus-visible,.jhk-pressed) { outline:none; box-shadow:none; filter:none; }
+.jhk-exact :is(a[href],button,[role='button']):focus-visible { --jhk-action-scale:1.06; text-decoration:underline; text-underline-offset:4px; }
+@media(hover:hover) {
+ .jhk-exact :is(a[href],button,[role='button']):hover { --jhk-action-scale:1.06; }
+}
+.jhk-exact :is(a[href],button,[role='button']):is(:active,.jhk-pressed) { --jhk-action-scale:.94; }
+.jhk-exact .jhk-footer__info a { display:inline-block; }
+.jhk-exact .jhk-banner__links { opacity:1; }
+.jhk-exact .jhk-banner__links a { position:relative; }
+.jhk-exact .jhk-banner__slide:not(.jhk-banner__gold) .jhk-banner__links a,.jhk-exact .jhk-banner__gold .jhk-banner__links a { color:transparent; background:transparent; font-size:0; border-radius:8px; }
+@media(max-width:768px) {
+ .jhk-exact .jhk-banner__gold .jhk-banner__links a { color:#fff; font-size:16px; background:#087b40; }
+ .jhk-exact .jhk-banner__gold .jhk-banner__links a:first-child { background:#d56b00; }
+}
+/* 37｜圖片型按鈕互動：縮放可見圖像，透明點擊範圍保持原位以免誤觸。 */
+/* 圖片內的按鈕也縮放其圖像，透明點擊區保持穩定。 */
+.jhk-exact :is(a[href],button).jhk-art-button { scale:1; overflow:visible; }
+.jhk-exact .jhk-button-art { display:block; position:absolute; inset:0; pointer-events:none; background-repeat:no-repeat; scale:var(--jhk-action-scale); transition:scale .16s ease; }
+.jhk-exact .exact-float { background:#edf0eb; border-radius:100px; }
+.jhk-exact .jhk-dots button::after { transition:scale .16s ease; }
+@media(prefers-reduced-motion:reduce) { .jhk-exact :is(a[href],button,[role='button']),.jhk-exact .jhk-button-art { transition:none; } }
+
+
+.jhk-exact .jhk-modal__details { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px 20px; padding:14px 18px; background:#fff; color:#174536; font-size:15px; }
+.jhk-exact .jhk-modal__details>a { display:inline-block; white-space:nowrap; text-decoration:underline; text-underline-offset:3px; color:#174536; }
+.jhk-exact .jhk-modal__box { max-height:calc(100dvh - 100px); overflow:visible; }
+.jhk-exact .jhk-modal__frame { max-height:calc(100dvh - 200px); }
+
+
+/* 38｜完整卡片互動：商品、新聞、證書及浮動工具整組縮放一次。 */
+/* 完整元件縮放：複合卡片、ICON 與文字整組只縮放一次。 */
+.jhk-exact .jhk-scale-unit { --jhk-action-scale:1; scale:var(--jhk-action-scale); transition:scale .16s ease; position:relative; }
+.jhk-exact .jhk-scale-unit:has(:focus-visible) { --jhk-action-scale:1.06; }
+@media(hover:hover) {
+ .jhk-exact .jhk-scale-unit:hover { --jhk-action-scale:1.06; z-index:2; }
+}
+.jhk-exact .jhk-scale-unit:is(:active,.jhk-pressed) { --jhk-action-scale:.94; }
+.jhk-exact .jhk-scale-unit :is(a[href],button,[role='button']) { --jhk-action-scale:1; scale:1; }
+
+
+/* 39｜輪播放大安全空間：預留卡片放大範圍，避免圓角、陰影或內容被裁切。 */
+/* 捲動視窗內預留縮放空間，原本卡片的位置、寬度與分頁數保持一致。 */
+.jhk-exact .jhk-carousel:not(.jhk-banner) { display:flow-root; overflow:visible; }
+.jhk-exact :is(#jhkVideoTrack,#jhkHotTrack,#jhkCertTrack,#jhkNewsTrack,#jhkDoctorGrid) {
+ --jhk-hover-space:clamp(14px,3vw,24px);
+ --jhk-track-bottom:0px;
+ padding:var(--jhk-hover-space) var(--jhk-hover-space) calc(var(--jhk-hover-space) + var(--jhk-track-bottom));
+ margin:calc(-1 * var(--jhk-hover-space));
+ width:calc(100% + 2 * var(--jhk-hover-space));
+ scroll-padding-inline:var(--jhk-hover-space);
+}
+.jhk-exact #jhkHotTrack { --jhk-track-bottom:calc(var(--u)*12); }
+.jhk-exact #jhkNewsTrack { --jhk-track-bottom:calc(var(--u)*10); }
+@media(min-width:769px) { .jhk-exact #jhkDoctorGrid { overflow:visible; } }
+@media(max-width:768px) { .jhk-exact #jhkHotTrack { --jhk-track-bottom:calc(var(--u)*10); } .jhk-exact #jhkNewsTrack { --jhk-track-bottom:calc(var(--u)*7); } }
+@media(prefers-reduced-motion:reduce) { .jhk-exact .jhk-scale-unit { transition:none; } }
+
+
+/* 40｜浮動服務列精準版：底框、客服、LINE、會員分層定位並維持可編輯文字。 */
+/* 使用四張獨立原稿：背景框一層，每個 ICON 與可編輯文字一組。 */
+.jhk-exact .exact-float { position:fixed!important; top:50vh!important; top:50dvh!important; bottom:auto!important; transform:translateY(-50%)!important; overflow:visible; background:none; border:0; border-radius:0; scale:1.5; transform-origin:center right; }
+.jhk-exact .exact-float__background { display:block; width:100%; height:auto; border-radius:999px; object-fit:contain; pointer-events:none; }
+.jhk-exact .exact-float__items { position:absolute; inset:4% 10%; display:flex; flex-direction:column; justify-content:space-between; overflow:visible; }
+.jhk-exact .exact-float .exact-float-link { position:relative; inset:auto; display:flex; flex-direction:column; align-items:center; gap:clamp(3px,.35vw,6px); width:100%; height:auto; padding:0; border:0; border-radius:0; background:none; overflow:visible; transform-origin:center; color:#173c34; font-size:clamp(11px,1vw,16px); font-weight:700; line-height:1.2; text-align:center; }
+.jhk-exact .exact-float-link img { display:block; width:100%; height:auto; object-fit:contain; border-radius:50%; pointer-events:none; }
+.jhk-exact .exact-float-link span { display:block; white-space:nowrap; pointer-events:none; }
+@media(max-width:768px) {
+ .jhk-exact .exact-float { scale:1.1; }
+}
+
+/* 41｜0904 定稿覆寫：主視覺完整顯示、CTA 等比例、箭頭統一及手機新聞寬度。 */
+/* 0904 定稿預覽：主視覺完整呈現、聯絡按鈕等比例、輪播箭頭統一。 */
+.jhk-exact .jhk-banner picture img { width:100%; height:auto; aspect-ratio:auto; object-fit:contain; }
+.jhk-exact .jhk-banner__links { display:none!important; }
+.jhk-exact .jhk-cta__item img { display:block; width:100%; height:auto; aspect-ratio:auto; object-fit:contain; }
+.jhk-exact .jhk-news__card.jhk-scale-unit { transform-origin:center center; }
+.jhk-exact .jhk-carousel:not(.jhk-banner)>.jhk-arrow {
+ --jhk-arrow-desired-width:calc(var(--u)*96);
+ --jhk-arrow-desired-font:calc(var(--u)*138);
+ width:var(--jhk-arrow-desired-width);
+ height:calc(var(--u)*165);
+ border:0;
+ border-radius:0;
+ background:transparent;
+ color:rgba(255,255,255,.92);
+ font-size:var(--jhk-arrow-desired-font)!important;
+ line-height:1;
+ padding:0 0 calc(var(--u)*15);
+ box-sizing:border-box;
+ overflow:hidden;
+ box-shadow:none;
+ text-shadow:0 calc(var(--u)*3) calc(var(--u)*8) rgba(0,0,0,.55);
+}
+@media(max-width:768px) {
+ .jhk-exact .jhk-carousel:not(.jhk-banner)>.jhk-arrow {
+  --jhk-arrow-desired-width:calc(var(--u)*48);
+  --jhk-arrow-desired-font:calc(var(--u)*72);
+  height:calc(var(--u)*81);
+  padding-bottom:calc(var(--u)*8);
+ }
+ .jhk-exact #jhkNewsTrack {
+  --jhk-hover-space:clamp(20px,4vw,32px);
+ }
+ .jhk-exact .jhk-news-area {
+  --jhk-news-arrow-space:clamp(31px,calc(15vw - 44px),64px);
+  --jhk-news-float-space:clamp(0px,calc(37.5vw - 195px),75px);
+  --jhk-news-mobile-width:max(
+   calc(var(--u)*314),
+   calc(100% - var(--jhk-news-float-space) - var(--jhk-news-arrow-space) - var(--jhk-news-arrow-space) - 20px)
+  );
+ }
+ .jhk-exact .jhk-news-area>.jhk-wrap {
+  width:var(--jhk-news-mobile-width);
+  max-width:none;
+  margin-left:min(
+   calc((100% - var(--jhk-news-mobile-width))/2),
+   calc(var(--jhk-news-arrow-space) + 10px)
+  );
+  margin-right:0;
+ }
+ .jhk-exact .jhk-banner__gold picture { display:block; }
+ .jhk-exact .jhk-banner__mobile-gold { display:none!important; }
+}
+
+/* 42｜新聞媒體分頁精簡：桌機最多顯示 7 顆動態圓點，手機改用目前頁／總頁數。 */
+.jhk-exact .jhk-news-area .jhk-dots button.is-edge::after { scale:.65; opacity:.72; }
+@media(max-width:768px) {
+ .jhk-exact .jhk-news-area .jhk-dots.is-counter {
+  min-height:calc(var(--u)*28);
+  align-items:center;
+  color:#76827d;
+  font-size:calc(var(--u)*14);
+  font-weight:700;
+  line-height:1.4;
+  letter-spacing:.08em;
+ }
+}

@@ -1,0 +1,59 @@
+/* Mobile service dock; desktop contact artwork and layout are unchanged. */
+@media(max-width:768px) {
+ #jhk-design-home.jhk-exact {
+  --jhk-contact-height:calc(100vw * 100 / 813);
+  padding-bottom:calc(var(--jhk-contact-height) + env(safe-area-inset-bottom,0px));
+ }
+ #jhk-design-home.jhk-exact #jhk-contact {
+  position:fixed;
+  z-index:100000;
+  inset:auto 0 0;
+  display:block;
+  width:100%;
+  margin:0;
+  padding:0 0 env(safe-area-inset-bottom,0px);
+  background:#efefef;
+  box-shadow:0 -2px 8px #0002;
+ }
+ #jhk-design-home.jhk-exact #jhk-contact > .jhk-cta__row {
+  display:grid;
+  width:100% !important;
+  max-width:none;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  column-gap:0 !important;
+  row-gap:0;
+  margin:0;
+  padding:0;
+ }
+ #jhk-design-home.jhk-exact #jhk-contact .jhk-cta__item {
+  display:block;
+  width:100%;
+  min-width:0;
+  min-height:0;
+  height:auto;
+  margin:0;
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:none;
+  box-shadow:none;
+  transform:none;
+ }
+ #jhk-design-home.jhk-exact #jhk-contact .jhk-cta__item picture,
+ #jhk-design-home.jhk-exact #jhk-contact .jhk-cta__item img {
+  display:block;
+  width:100%;
+  height:auto;
+  margin:0;
+  border-radius:0;
+ }
+ #jhk-design-home.jhk-exact #jhk-contact .jhk-cta__item img {
+  aspect-ratio:271 / 100;
+  object-fit:contain;
+ }
+ #jhk-design-home.jhk-exact #jhk-contact .jhk-cta__item:focus-visible {
+  outline-offset:-3px;
+ }
+ /* The bottom dock replaces the duplicate mobile service shortcuts. */
+ #jhk-design-home.jhk-exact .exact-float { display:none; }
+}

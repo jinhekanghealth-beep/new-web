@@ -8,9 +8,11 @@
 <meta name="theme-color" content="#063c30">
 <title>金禾康健康科技有限公司｜新版首頁預覽</title>
 <!-- 全站樣式集中於 style.css；版面調整請優先修改該檔。 -->
-<link rel="stylesheet" href="style.css?v=20260908-25">
-<link rel="stylesheet" href="typography.css?v=20260908-25">
-<link rel="stylesheet" href="mobile-contact.css?v=20260908-25">
+<link rel="stylesheet" href="style.css?v=20260908-30">
+<link rel="stylesheet" href="typography.css?v=20260908-30">
+<link rel="stylesheet" href="mobile-contact.css?v=20260908-30">
+<link rel="stylesheet" href="footer-disclaimer.css?v=20260908-30">
+<script src="footer-disclaimer.js?v=20260908-30" defer></script>
 </head>
 <body>
 <script>document.documentElement.classList.add("is-jhk-design","is-jhk-exact");</script>
@@ -126,17 +128,47 @@
     </div>
   </section>
 
-<footer class="jhk-footer" id="jhk-footer" aria-label="公司資訊與社群連結"><div class="jhk-wrap jhk-footer__inner">
+<footer class="jhk-footer jhk-footer--refined" id="jhk-footer" aria-label="公司資訊與社群連結"><div class="jhk-wrap jhk-footer__inner">
  <div class="jhk-footer__brand"><a href="#jhk-design-home" aria-label="回金禾康首頁"><img src="JHK_images/10_頁尾/頁尾Logo.png" alt="金禾康 食用泌體專家" width="350" loading="lazy"></a></div>
- <div class="jhk-footer__info"><strong>金禾康健康科技有限公司</strong><span>統一編號：91115608</span><span>聯絡地址：台中市北屯區中清路二段17號6樓</span><span>客服專線：<a href="tel:0809070216">0809-070-216</a></span><span>服務時間：周一至周五 AM09:00 ~ PM06:00</span></div>
+ <div class="jhk-footer__service">
+  <h2>免費健康諮詢</h2>
+  <a class="jhk-footer__phone" href="tel:0809070216">0809-070-216</a>
+  <p class="jhk-footer__hours">週一至週五 09:00 至 18:00</p>
+ </div>
  <div class="jhk-footer__social" role="group" aria-label="金禾康社群平台">
-  <a href="https://www.facebook.com/profile.php?id=61590854039057" target="_blank" rel="noopener noreferrer" aria-label="Facebook（另開視窗）" title="Facebook"><img src="JHK_images/10_頁尾/社群_Facebook.png" alt="" width="240" height="240"></a>
-  <a id="jhk-social-youtube" href="https://www.youtube.com/@jhkbio" target="_blank" rel="noopener noreferrer" aria-label="YouTube（另開視窗）" title="YouTube"><img src="JHK_images/10_頁尾/社群_YouTube.png" alt="" width="240" height="240"></a>
-  <a href="https://line.me/R/ti/p/@750lbmxq" target="_blank" rel="noopener noreferrer" aria-label="LINE（另開視窗）" title="LINE"><img src="JHK_images/10_頁尾/社群_LINE.png" alt="" width="244" height="240"></a>
-  <a href="https://www.instagram.com/jhkbio/" target="_blank" rel="noopener noreferrer" aria-label="Instagram（另開視窗）" title="Instagram"><img src="JHK_images/10_頁尾/社群_Instagram.png" alt="" width="240" height="240"></a>
+  <a href="https://www.facebook.com/profile.php?id=61590854039057" target="_blank" rel="noopener noreferrer" aria-label="Facebook（另開視窗）" title="Facebook"><img src="JHK_images/10_頁尾/social-facebook-transparent.png" alt="" width="240" height="240"></a>
+  <a id="jhk-social-youtube" href="https://www.youtube.com/@金禾康jhkbio" target="_blank" rel="noopener noreferrer" aria-label="YouTube（另開視窗）" title="YouTube"><img src="JHK_images/10_頁尾/social-youtube-transparent.png" alt="" width="240" height="240"></a>
+  <a href="https://line.me/R/ti/p/@750lbmxq" target="_blank" rel="noopener noreferrer" aria-label="LINE（另開視窗）" title="LINE"><img src="JHK_images/10_頁尾/social-line-transparent.png" alt="" width="244" height="240"></a>
+  <a href="https://www.instagram.com/jhkbio/" target="_blank" rel="noopener noreferrer" aria-label="Instagram（另開視窗）" title="Instagram"><img src="JHK_images/10_頁尾/social-instagram-transparent.png" alt="" width="240" height="240"></a>
+ </div>
+ <div class="jhk-footer__info">
+  <strong>金禾康健康科技有限公司</strong>
+  <span>統一編號：91115608</span>
+  <span>聯絡地址：台中市北屯區中清路二段17號6樓</span>
+ </div>
+ <div class="jhk-footer__legal-summary" id="jhk-disclaimer">
+  <p>購買與食用前，請詳閱商品資訊及免責聲明。</p>
+  <button type="button" class="jhk-footer__legal-button" id="jhk-disclaimer-open" aria-haspopup="dialog" aria-controls="jhk-disclaimer-dialog">免責聲明 <span aria-hidden="true">+</span></button>
  </div>
  <small class="jhk-footer__copyright">© 2026 金禾康 All Rights Reserved.</small>
 </div></footer>
+<dialog id="jhk-disclaimer-dialog" class="jhk-disclaimer-dialog" aria-labelledby="jhk-disclaimer-title">
+ <div class="jhk-disclaimer-dialog__header">
+  <h2 id="jhk-disclaimer-title">免責聲明</h2>
+  <button type="button" class="jhk-disclaimer-dialog__close" data-disclaimer-close aria-label="關閉免責聲明" autofocus>&times;</button>
+ </div>
+ <div class="jhk-disclaimer-dialog__body">
+  <p>本網站（healthjhk.com）為金禾康健康科技授權之唯一線上官方。未經授權之第三方平台、私人社團或拍賣賣場銷售之商品，其來源與售後服務均與本公司無關，請消費者認明官網下單以保障權益。</p>
+  <ul>
+   <li><strong>特殊體質：</strong>孕婦或慢性病患者食用前請先諮詢專業醫師。</li>
+   <li><strong>訂單與資訊修正：</strong>本站盡力維持圖文準確；若遇價格或規格標示錯誤、缺貨等狀況，本公司保留更正與取消訂單並全額退款之權利。</li>
+   <li><strong>智財權與修訂：</strong>本站所有圖文均屬本公司所有，未經授權禁止重製或轉載。本公司保留隨時修訂本聲明之權利，修正後直接公告於本網站，不另行通知。</li>
+  </ul>
+ </div>
+ <div class="jhk-disclaimer-dialog__actions">
+  <button type="button" data-disclaimer-close>關閉聲明</button>
+ </div>
+</dialog>
 
 
   <div class="jhk-float exact-float" role="navigation" aria-label="快捷服務">

@@ -1,0 +1,311 @@
+/* Centered company footer, with an on-demand legal notice. */
+#jhk-design-home.jhk-exact .jhk-footer--refined {
+ height:auto;
+ min-height:0;
+ padding:52px 24px 28px;
+ border-top:1px solid #c8b77c66;
+ background:radial-gradient(ellipse at 50% 0,#46565088,transparent 65%),#34423f;
+ color:#f2f5f1;
+ text-align:center;
+}
+#jhk-design-home.jhk-exact .jhk-footer--refined .jhk-footer__inner {
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ justify-content:flex-start;
+ gap:0;
+ width:100%;
+ max-width:1000px;
+ height:auto;
+ margin:0 auto;
+ padding:0;
+}
+#jhk-design-home.jhk-exact .jhk-footer--refined .jhk-footer__brand {
+ position:static;
+ display:block;
+ width:220px;
+ max-width:100%;
+ margin:0 auto 24px;
+ padding:0;
+ transform:none;
+}
+#jhk-design-home.jhk-exact .jhk-footer--refined .jhk-footer__brand img {
+ display:block;
+ width:100%;
+ height:auto;
+ filter:brightness(0) invert(1);
+}
+#jhk-design-home.jhk-exact .jhk-footer__service {
+ margin:0 0 18px;
+ text-align:center;
+}
+#jhk-design-home.jhk-exact .jhk-footer__service h2 {
+ margin:0;
+ color:inherit;
+ font-size:max(18px,var(--jhk-type-card,20px));
+ font-weight:700;
+ line-height:1.5;
+ letter-spacing:.06em;
+}
+#jhk-design-home.jhk-exact .jhk-footer__phone {
+ display:inline-flex;
+ align-items:center;
+ min-height:44px;
+ color:#f1dda2;
+ font-size:clamp(20px,1.9vw,26px);
+ font-weight:700;
+ line-height:1.5;
+ letter-spacing:.04em;
+}
+#jhk-design-home.jhk-exact .jhk-footer__hours {
+ margin:0;
+ color:#d6ded9;
+ font-size:max(13px,var(--jhk-type-caption,14px));
+ line-height:1.7;
+}
+#jhk-design-home.jhk-exact .jhk-footer--refined .jhk-footer__social {
+ position:static;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ flex-wrap:wrap;
+ gap:16px;
+ width:auto;
+ margin:0;
+ padding:0;
+ transform:none;
+}
+#jhk-design-home.jhk-exact .jhk-footer--refined .jhk-footer__social a {
+ display:grid;
+ place-items:center;
+ width:44px;
+ height:44px;
+ margin:0;
+ padding:0;
+ border:0;
+ border-radius:50%;
+ background:transparent;
+ box-shadow:none;
+}
+#jhk-design-home.jhk-exact .jhk-footer--refined .jhk-footer__social img {
+ display:block;
+ width:44px;
+ height:44px;
+ object-fit:contain;
+}
+#jhk-design-home.jhk-exact .jhk-footer--refined .jhk-footer__info {
+ position:static;
+ width:100%;
+ max-width:100%;
+ margin:22px 0 0;
+ padding:0;
+ color:#dce4df;
+ font-size:max(13px,var(--jhk-type-caption,14px));
+ line-height:1.8;
+ text-align:center;
+ overflow-wrap:anywhere;
+}
+#jhk-design-home.jhk-exact .jhk-footer--refined .jhk-footer__info strong,
+#jhk-design-home.jhk-exact .jhk-footer--refined .jhk-footer__info span {
+ display:block;
+ margin:0;
+ color:inherit;
+ font-size:inherit;
+ line-height:inherit;
+}
+#jhk-design-home.jhk-exact .jhk-footer--refined .jhk-footer__info strong {
+ margin-bottom:4px;
+ color:#fff;
+ font-weight:700;
+}
+#jhk-design-home.jhk-exact .jhk-footer__legal-summary {
+ width:100%;
+ max-width:640px;
+ margin:24px auto 18px;
+ padding-top:18px;
+ border-top:1px solid #ffffff26;
+ font-size:max(13px,var(--jhk-type-caption,14px));
+ color:#cbd7d0;
+}
+#jhk-design-home.jhk-exact .jhk-footer__legal-summary p {
+ margin:0;
+ font-size:inherit;
+ line-height:1.7;
+}
+#jhk-design-home.jhk-exact .jhk-footer__legal-button {
+ display:inline-flex;
+ align-items:center;
+ gap:12px;
+ min-height:44px;
+ margin:6px 0 0;
+ padding:6px 4px;
+ border:0;
+ border-bottom:1px solid #dcc89180;
+ border-radius:0;
+ background:transparent;
+ color:#f1dda2;
+ font:inherit;
+ font-weight:700;
+ cursor:pointer;
+}
+#jhk-design-home.jhk-exact .jhk-footer--refined .jhk-footer__copyright {
+ position:static;
+ display:block;
+ width:100%;
+ margin:0;
+ padding:0;
+ color:#b9c8bf;
+ font-size:var(--jhk-type-caption,12px);
+ line-height:1.6;
+ white-space:normal;
+ text-align:center;
+}
+
+/* Native dialog supplies modal focus containment and a top-layer backdrop. */
+#jhk-design-home.jhk-exact .jhk-disclaimer-dialog {
+ box-sizing:border-box;
+ width:min(680px,calc(100% - 32px));
+ max-width:none;
+ max-height:calc(100vh - 32px);
+ max-height:calc(100dvh - 32px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));
+ margin:auto;
+ padding:0;
+ overflow:hidden;
+ border:1px solid #cdd8d0;
+ border-radius:18px;
+ background:#fcfcf8;
+ color:#34453d;
+ box-shadow:0 24px 80px #00150e55;
+ font-size:clamp(14px,var(--jhk-type-body,16px),18px);
+ text-align:left;
+}
+#jhk-design-home.jhk-exact .jhk-disclaimer-dialog:not([open]) { display:none; }
+#jhk-design-home.jhk-exact .jhk-disclaimer-dialog[open] {
+ display:flex;
+ flex-direction:column;
+}
+#jhk-design-home.jhk-exact .jhk-disclaimer-dialog::backdrop {
+ background:#081c18ad;
+ backdrop-filter:blur(3px);
+}
+#jhk-design-home.jhk-exact .jhk-disclaimer-dialog__header {
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ flex:0 0 auto;
+ gap:16px;
+ padding:18px 24px;
+ border-top:3px solid #cdb56c;
+ background:#34483f;
+ color:#fff;
+}
+#jhk-design-home.jhk-exact .jhk-disclaimer-dialog__header h2 {
+ margin:0;
+ font-size:22px;
+ font-weight:700;
+ line-height:1.4;
+ letter-spacing:.08em;
+}
+#jhk-design-home.jhk-exact .jhk-disclaimer-dialog__close {
+ display:grid;
+ place-items:center;
+ flex:0 0 44px;
+ width:44px;
+ height:44px;
+ margin:0;
+ padding:0;
+ border:1px solid #ffffff44;
+ border-radius:50%;
+ background:transparent;
+ color:inherit;
+ font-size:28px;
+ line-height:1;
+ cursor:pointer;
+}
+#jhk-design-home.jhk-exact .jhk-disclaimer-dialog__body {
+ min-height:0;
+ padding:24px 28px;
+ overflow-y:auto;
+ overscroll-behavior:contain;
+ scrollbar-width:thin;
+ line-height:1.8;
+ overflow-wrap:anywhere;
+}
+#jhk-design-home.jhk-exact .jhk-disclaimer-dialog__body p {
+ margin:0;
+ font-size:inherit;
+ line-height:inherit;
+}
+#jhk-design-home.jhk-exact .jhk-disclaimer-dialog__body ul {
+ margin:20px 0 0;
+ padding-left:1.3em;
+ list-style:disc;
+}
+#jhk-design-home.jhk-exact .jhk-disclaimer-dialog__body li + li { margin-top:14px; }
+#jhk-design-home.jhk-exact .jhk-disclaimer-dialog__actions {
+ flex:0 0 auto;
+ padding:14px 24px;
+ border-top:1px solid #dce3db;
+ text-align:right;
+}
+#jhk-design-home.jhk-exact .jhk-disclaimer-dialog__actions button {
+ min-height:44px;
+ padding:9px 24px;
+ border:1px solid #34483f;
+ border-radius:7px;
+ background:#34483f;
+ color:#fff;
+ font:inherit;
+ font-weight:700;
+ cursor:pointer;
+}
+@media(min-width:769px) {
+ #jhk-design-home.jhk-exact .jhk-footer--refined .jhk-footer__inner {
+  display:grid;
+  grid-template-columns:minmax(100px,.8fr) minmax(180px,1fr) minmax(0,1.5fr) auto;
+  grid-template-areas:"brand service info social" "legal legal legal legal" "copyright copyright copyright copyright";
+  column-gap:clamp(12px,2vw,32px);
+  align-items:center;
+  max-width:1400px;
+ }
+ #jhk-design-home.jhk-exact .jhk-footer--refined .jhk-footer__brand {
+  grid-area:brand;
+  width:min(100%,240px);
+  margin:0 auto;
+ }
+ #jhk-design-home.jhk-exact .jhk-footer__service {
+  grid-area:service;
+  margin:0;
+ }
+ #jhk-design-home.jhk-exact .jhk-footer--refined .jhk-footer__social {
+  grid-area:social;
+  flex-wrap:nowrap;
+  gap:12px;
+ }
+ #jhk-design-home.jhk-exact .jhk-footer--refined .jhk-footer__info {
+  grid-area:info;
+  margin:0;
+  padding-left:clamp(20px,3vw,40px);
+  border-left:1px solid #ffffff26;
+  box-sizing:border-box;
+  text-align:left;
+ }
+ #jhk-design-home.jhk-exact .jhk-footer__legal-summary {
+  grid-area:legal;
+  max-width:none;
+  margin:30px 0 18px;
+ }
+ #jhk-design-home.jhk-exact .jhk-footer--refined .jhk-footer__copyright {
+  grid-area:copyright;
+ }
+}
+@media(max-width:768px) {
+ #jhk-design-home.jhk-exact .jhk-footer--refined { padding:38px 20px 24px; }
+ #jhk-design-home.jhk-exact .jhk-footer--refined .jhk-footer__brand { width:180px; margin-bottom:20px; }
+ #jhk-design-home.jhk-exact .jhk-footer--refined .jhk-footer__social { gap:14px; }
+ #jhk-design-home.jhk-exact .jhk-footer__legal-summary { margin-top:20px; }
+ #jhk-design-home.jhk-exact .jhk-disclaimer-dialog { border-radius:14px; }
+ #jhk-design-home.jhk-exact .jhk-disclaimer-dialog__header { padding:14px 16px; }
+ #jhk-design-home.jhk-exact .jhk-disclaimer-dialog__body { padding:20px; }
+ #jhk-design-home.jhk-exact .jhk-disclaimer-dialog__actions { padding:12px 16px; }
+}

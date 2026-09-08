@@ -1,59 +1,96 @@
+/* =====================================================================
+ * 金禾康網站 CSS 區塊維護說明
+ * 檔案：mobile-contact.css
+ * 用途：聯絡按鈕、手機底部固定服務列與頁面底部預留空間。
+ *
+ * 載入順序：style.css -> typography.css -> mobile-contact.css
+ *           -> footer-disclaimer.css。
+ * 維護原則：保留原有規則、選擇器、宣告值及覆蓋順序；不依區塊重新排序。
+ * 相同選擇器可能分散於多處，後方規則或較高優先權規則仍可能覆蓋前方。
+ * 各 @media 區塊均標示原始適用條件，修改桌機設定時請留意手機覆蓋。
+ * 變數 var(...) 的實際尺寸以當前螢幕條件及後續覆蓋為準。
+ * 註解編號 [M-xxx] 可快速定位個別規則。
+ *
+ * 區塊索引（可搜尋區塊名稱）：
+ * - 10 聯絡按鈕與快捷服務
+ * ===================================================================== */
+
 /* Mobile service dock; desktop contact artwork and layout are unchanged. */
+
+/* [M-001] RWD／媒體條件：(max-width:768px)。 */
 @media(max-width:768px) {
- #jhk-design-home.jhk-exact {
-  --jhk-contact-height:calc(100vw * 100 / 813);
-  padding-bottom:calc(var(--jhk-contact-height) + env(safe-area-inset-bottom,0px));
- }
- #jhk-design-home.jhk-exact #jhk-contact {
-  position:fixed;
-  z-index:100000;
-  inset:auto 0 0;
-  display:block;
-  width:100%;
-  margin:0;
-  padding:0 0 env(safe-area-inset-bottom,0px);
-  background:#efefef;
-  box-shadow:0 -2px 8px #0002;
- }
- #jhk-design-home.jhk-exact #jhk-contact > .jhk-cta__row {
-  display:grid;
-  width:100% !important;
-  max-width:none;
-  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
-  column-gap:0 !important;
-  row-gap:0;
-  margin:0;
-  padding:0;
- }
- #jhk-design-home.jhk-exact #jhk-contact .jhk-cta__item {
-  display:block;
-  width:100%;
-  min-width:0;
-  min-height:0;
-  height:auto;
-  margin:0;
-  padding:0;
-  border:0;
-  border-radius:0;
-  background:none;
-  box-shadow:none;
-  transform:none;
- }
- #jhk-design-home.jhk-exact #jhk-contact .jhk-cta__item picture,
+  /* [M-002] 10 聯絡按鈕與快捷服務 / 區塊樣式；設定：共用變數、定位與圖層、尺寸與間距。 */
+  #jhk-design-home.jhk-exact {
+    --jhk-contact-height:calc(100vw * 100 / 813);
+    padding-bottom:calc(var(--jhk-contact-height) + env(safe-area-inset-bottom,0px));
+  }
+
+  /* [M-003] 10 聯絡按鈕與快捷服務 / 區塊樣式；設定：排列方式、定位與圖層、尺寸與間距、視覺外觀。 */
+  #jhk-design-home.jhk-exact #jhk-contact {
+    position:fixed;
+    z-index:100000;
+    inset:auto 0 0;
+    display:block;
+    width:100%;
+    margin:0;
+    padding:0 0 env(safe-area-inset-bottom,0px);
+    background:#efefef;
+    box-shadow:0 -2px 8px #0002;
+  }
+
+  /* [M-004] 10 聯絡按鈕與快捷服務 / 區塊樣式；設定：排列方式、尺寸與間距。 */
+  #jhk-design-home.jhk-exact #jhk-contact > .jhk-cta__row {
+    display:grid;
+    width:100% !important;
+    max-width:none;
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+    column-gap:0 !important;
+    row-gap:0;
+    margin:0;
+    padding:0;
+  }
+
+  /* [M-005] 10 聯絡按鈕與快捷服務 / 區塊樣式；設定：排列方式、定位與圖層、尺寸與間距、視覺外觀。 */
+  #jhk-design-home.jhk-exact #jhk-contact .jhk-cta__item {
+    display:block;
+    width:100%;
+    min-width:0;
+    min-height:0;
+    height:auto;
+    margin:0;
+    padding:0;
+    border:0;
+    border-radius:0;
+    background:none;
+    box-shadow:none;
+    transform:none;
+  }
+
+  /* [M-006] 10 聯絡按鈕與快捷服務 / 圖片呈現；設定：排列方式、尺寸與間距、視覺外觀。 */
+  #jhk-design-home.jhk-exact #jhk-contact .jhk-cta__item picture,
  #jhk-design-home.jhk-exact #jhk-contact .jhk-cta__item img {
-  display:block;
-  width:100%;
-  height:auto;
-  margin:0;
-  border-radius:0;
- }
- #jhk-design-home.jhk-exact #jhk-contact .jhk-cta__item img {
-  aspect-ratio:271 / 100;
-  object-fit:contain;
- }
- #jhk-design-home.jhk-exact #jhk-contact .jhk-cta__item:focus-visible {
-  outline-offset:-3px;
- }
- /* The bottom dock replaces the duplicate mobile service shortcuts. */
- #jhk-design-home.jhk-exact .exact-float { display:none; }
+    display:block;
+    width:100%;
+    height:auto;
+    margin:0;
+    border-radius:0;
+  }
+
+  /* [M-007] 10 聯絡按鈕與快捷服務 / 圖片呈現；設定：尺寸與間距、視覺外觀。 */
+  #jhk-design-home.jhk-exact #jhk-contact .jhk-cta__item img {
+    aspect-ratio:271 / 100;
+    object-fit:contain;
+  }
+
+  /* [M-008] 10 聯絡按鈕與快捷服務 / 互動或可及性狀態；設定：視覺外觀。 */
+  #jhk-design-home.jhk-exact #jhk-contact .jhk-cta__item:focus-visible {
+    outline-offset:-3px;
+  }
+
+  /* The bottom dock replaces the duplicate mobile service shortcuts. */
+
+  /* [M-009] 10 聯絡按鈕與快捷服務 / 區塊樣式；設定：排列方式。 */
+  #jhk-design-home.jhk-exact .exact-float {
+    display:none;
+  }
 }

@@ -56,3 +56,59 @@
   --jhk-type-price:clamp(18px,calc(var(--u)*20),27px);
  }
 }
+
+/* Certificate subtitle follows the shared team-subtitle text scale. */
+#jhk-design-home.jhk-exact .jhk-cert__subtitle {
+ position:relative;
+ z-index:1;
+ box-sizing:border-box;
+ width:min(92%,1280px);
+ margin:clamp(16px,calc(var(--u)*28),28px) auto;
+ padding:0;
+ color:#e3ebe6;
+ font-size:var(--jhk-type-card);
+ font-weight:400;
+ line-height:1.5;
+ letter-spacing:.12em;
+ text-align:center;
+}
+#jhk-design-home.jhk-exact .jhk-cert__subtitle span {
+ display:inline-block;
+ max-width:100%;
+}
+#jhk-design-home.jhk-exact .jhk-cert__subtitle span + wbr + span {
+ margin-left:.6em;
+}
+@media(max-width:768px) {
+ #jhk-design-home.jhk-exact .jhk-cert__subtitle {
+  margin:16px auto;
+  letter-spacing:.14em;
+ }
+ #jhk-design-home.jhk-exact .jhk-cert__subtitle span {
+  display:block;
+ }
+ #jhk-design-home.jhk-exact .jhk-cert__subtitle span + wbr + span {
+  margin-left:0;
+ }
+}
+
+/* Shared responsive subtitles, always smaller than the main headings. */
+#jhk-design-home.jhk-exact {
+ --jhk-type-subtitle:clamp(24px,2vw,36px);
+}
+#jhk-design-home.jhk-exact .jhk-team-heading__subtitle,
+#jhk-design-home.jhk-exact .jhk-cert__subtitle {
+ font-size:min(var(--jhk-type-subtitle),calc(var(--jhk-type-title) * .8));
+ font-weight:400;
+ line-height:1;
+ letter-spacing:.12em;
+}
+@media(max-width:768px) {
+ #jhk-design-home.jhk-exact {
+  --jhk-type-subtitle:clamp(14px,3.6vw,18px);
+ }
+ #jhk-design-home.jhk-exact .jhk-team-heading__subtitle,
+ #jhk-design-home.jhk-exact .jhk-cert__subtitle {
+  letter-spacing:.1em;
+ }
+}
